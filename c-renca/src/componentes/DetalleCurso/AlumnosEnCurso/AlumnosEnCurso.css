@@ -1,0 +1,49 @@
+
+.column-5 {
+    flex: 1;
+    margin-top:0px;
+
+  }
+
+  .column-5 {
+     width: 100%; /* Ajusta el ancho de las columnas al 100% en pantallas más pequeñas */
+     height: auto;/* Ajusta la altura de las columnas automáticamente */
+   }
+
+  .alumnos {
+    width: 200px;
+    padding: 20px 40px 10px 40px;
+    text-align: center;
+    background-color: #D9D9D9;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    margin-left: 60px;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .column-5 {
+      width: calc(100% - 20px); /* Resta el espacio de los márgenes */
+      margin: 0 10px; /* Aplica márgenes a ambos lados */
+    }
+  
+    .alumnos {
+      width: 100%;
+      padding: 20px 20px 10px 20px; /* Ajusta el padding */
+      margin-left: 0; /* Elimina el margen izquierdo */
+      margin-right: 0; /* Elimina el margen derecho */
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .column-5 {
+      width: 100%; /* Ajusta el ancho de las columnas al 100% en pantallas más pequeñas */
+      height: auto;/* Ajusta la altura de las columnas automáticamente */
+      margin: 0px;
+    }
+
+    .alumnos {
+      width: 100%;
+      margin-left: 10px; 
+      margin-right: 10px; 
+    }
+  }
