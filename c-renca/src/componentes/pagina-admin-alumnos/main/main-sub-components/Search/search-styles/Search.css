@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+html {
+  width: 100vw;
+}
+
+.search-container {
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-control {
+  margin-top: 12%;
+  width: 95%;
+}
+
+.bg-curso th {
+  background-color: #009A88;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+}
+
+tbody td {
+  cursor: pointer;
+}/*# sourceMappingURL=Search.css.map */

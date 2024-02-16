@@ -1,0 +1,9 @@
+@import './resets/resets';
+@import './resets/variables';
+
+
+body {
+    width: 100%;
+    background-color: $seventh-color;
+    overflow-x: hidden;
+}

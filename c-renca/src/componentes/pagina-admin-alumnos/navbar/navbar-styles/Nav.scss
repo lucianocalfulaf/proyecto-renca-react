@@ -1,0 +1,57 @@
+@import '../../resets/resets';
+@import '../../resets/variables';
+
+// Navbar
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    background-color: $quinary-color;
+    width: 100vw;
+    height: 3vh;
+
+    &__list {
+        width: 50vw;
+        height: 38%;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        align-self: center;
+        font-size: $font-size;
+        list-style: none;
+    }
+
+    &__item:hover {
+        transform: scale(1.1);
+        transition: transform 150ms ease-in;
+    }
+
+    &__link, &__icon i {
+        text-decoration: none;
+        padding: $main-padding;
+        color: $text-color;
+        transition: 150ms ease-out;
+    }     
+
+    &__link:hover, &__icon i:hover {
+        color: $secondary-color;
+    } 
+
+    // Íconos
+    &__link--icons {
+        margin-left: 20px;
+    }
+
+    &__icon i {
+        margin-left: 10px;
+    }
+
+    &__icon {
+        text-decoration: none;
+        list-style: none;
+    }
+
+    &__icon i:hover {
+        transform: $transformation;
+    }
+}
