@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import CatalogoCursos from "../src/componentes/CatalogoCursos/TarjetaCursos";
+import CatalogoCursos from "../src/componentes/CatalogoCursos/Pagina-catalogoCursos";
 import AgregarCursos from "../src/componentes/AgregarCursoUsuario/AgregarCursoUsuario";
 import DetalleCurso from "../src/componentes/DetalleCurso/DetalleCurso";
 import DetalleCursoUsuario from "../src/componentes/DetalleCursoUsuario/DetalleCursoUsuario";
