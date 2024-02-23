@@ -1,0 +1,28 @@
+@import '../../../../resets/resets';
+@import '../../../../resets/variables';
+
+// Main Content
+.main {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: $seventh-color;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr .4fr;
+
+    .top-row {
+        display: grid;
+        grid-template-columns: 1fr .3fr;
+        align-content: center;
+        width: 100%;
+    }
+      
+    .bottom-row {
+        display: grid;
+        grid-template-columns: 1fr .3fr;
+        width: 100%;
+    }
+}

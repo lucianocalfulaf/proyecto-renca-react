@@ -1,0 +1,90 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  align-items: center; /* Centra verticalmente los elementos */
+  justify-content: center; /* Centra horizontalmente los elementos */
+  font-family: "Poppins", sans-serif;
+}
+
+.registro-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+        to right,
+        #f56524 16.7%,
+        #fca227 16.7% 33.4%,
+        #cac600 33.4% 50.1%,
+        #009A88 50.1% 66.8%,
+        #58b3b0 66.8% 83.5%,
+        #0088d4 83.5% 100%
+    );
+}
+
+.container-fluid {
+  text-align: center; /* Alinea el contenido del contenedor al centro */
+  width: 100%;
+}
+
+.formulario {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 20px;
+  max-width: 600px; /* Limita el ancho máximo del formulario para un diseño más flexible */
+  box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+}
+
+.logo {
+  width: 15%;
+  margin-bottom: 30px;
+}
+
+/* Esta clase no se encuentra en la estructura */
+/* .btn {
+  font-size: 14px;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 10px 30px;
+  border-radius: 45px;
+} */ 
+
+.form {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.botonRegister {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: 100ms ease-out;
+}
+
+.botonRegister:hover {
+  transform: scale(1.01);
+  transition: 100ms ease-in;
+}
+
+/* App.css */
+.password-strength {
+  padding: 5px;
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.password-strength.red {
+  background-color: red;
+}
+
+.password-strength.yellow {
+  background-color: yellow;
+}
+
+.password-strength.green {
+  background-color: green;
+}/*# sourceMappingURL=Registro.css.map */

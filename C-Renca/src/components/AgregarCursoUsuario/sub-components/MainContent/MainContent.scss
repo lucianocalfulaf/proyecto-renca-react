@@ -1,0 +1,37 @@
+@import '../../../../resets/resets';
+@import '../../../../resets/variables';
+
+// Main Content
+.main {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: $seventh-color;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr .4fr;
+
+    .top-row-2 {
+        display: grid;
+        grid-template-columns: 1fr .5fr;
+        margin-top: 1%;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+      
+    .bottom-row-2 {
+        margin-top: -5%;
+        display: grid;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .top-row-2,
+    .bottom-row-2 {
+        flex-direction: column;
+    }
+}

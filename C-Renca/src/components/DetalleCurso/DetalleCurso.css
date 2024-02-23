@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+html {
+  width: 100vw;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  background-color: #F9F6EE;
+  overflow-x: hidden;
+}
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 0.5fr 2fr 0.3fr;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  text-align: center;
+}/*# sourceMappingURL=DetalleCurso.css.map */

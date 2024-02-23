@@ -1,0 +1,129 @@
+@import '../../resets/_resets.scss';
+
+/* Container Principal */
+.login-admin-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100vw;
+}
+
+/* Lado Izquierdo */
+.left-side {
+    display: grid;
+    background-color: #009A88;
+    color: black;
+    height: 100vh;
+    width: 100%;
+}
+
+.ls-form {
+    width: 100%; /* Ajuste del ancho del campo de entrada */
+    margin-bottom: 10px;/* Espaciado entre campos de entrada */
+    margin-top: 50px;
+}
+
+.titulo-login-admin {
+    text-align: center;
+    color: #fff;
+}
+
+.imagen2 {
+    height:50% ;
+    width: 50%;
+    border-radius: 10px;
+    margin-left: 25%;
+}
+
+.imagen1 {
+    width: 30%;
+    margin-left: 35%;
+    margin-bottom: 1%;
+}
+
+
+/* Formulario (Lado derecho) */
+.formulario-is {
+    background-color: rgba(222, 205, 205, 0.5);
+    width: 80%;
+    height: 70%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: auto;
+    margin-inline: auto;
+    margin-bottom: auto;
+    border: 1px solid #0000002c;
+    box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+}
+
+.titulo-is {
+    text-align: center;
+    margin-top: 5%;
+}
+
+.datos {
+    width: 300px;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+.logo-is {
+    width: 70%;
+}
+
+.botonRegister-is {
+    width: 100%; /* Ajuste del ancho del botón */
+    margin-top: 10px; /* Espaciado entre campos de entrada y botón */
+    border-radius: 10px;
+    transition: 100ms ease-out;
+}
+
+.botonRegister-is:hover {
+    transform: scale(1.01);
+    transition: 100ms ease-in;
+}
+
+/* Media queries para ajustar estilos en pantallas más pequeñas */
+@media only screen and (max-width: 768px) {
+    .formulario {
+    padding: 10px; /* Reducción del espacio interior */
+    }
+}
+.container {
+    display: flex; /* Utiliza flexbox para los elementos hijos */
+}
+@media only screen and (max-width: 480px) {
+    .left-side {
+    width: 100%; /* Ancho completo para ocupar toda la pantalla */
+    margin: 0; /* Elimino el margen para ocupar todo el ancho */
+    height: auto; /* Altura automática para ajustar contenido */
+    }
+
+    .formulario {
+    width: 90%; /* Ancho del formulario para pantallas de teléfono */
+    padding: 10px; /* Reducción del espacio interior */
+    }
+
+    .imagen2,
+    .imagen1 {
+    width: 100%; /* Ancho completo para pantallas de teléfono */
+    max-width: none; /* Elimino el máximo ancho para pantallas de teléfono */
+    margin: 10px auto; /* Centro las imágenes horizontalmente */
+    }
+
+    .logo {
+    width: 90%; /* Ancho del logo para pantallas de teléfono */
+    max-width: none; /* Elimino el máximo ancho para pantallas de teléfono */
+    }
+
+    .datos {
+    width: 90%; /* Ancho del contenedor de datos para pantallas de teléfono */
+    max-width: none; /* Elimino el máximo ancho para pantallas de teléfono */
+    margin: 10px 0; /* Espaciado vertical */
+    }
+}

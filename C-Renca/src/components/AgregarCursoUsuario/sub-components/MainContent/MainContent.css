@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+
+html {
+  width: 100vw;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100%;
+  background-color: #F9F6EE;
+  overflow-x: hidden;
+}
+
+.main {
+  grid-column-start: 1;
+  grid-column-end: 5;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  background-color: #F9F6EE;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 0.4fr;
+}
+.main .top-row {
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  margin-top: 75px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.main .bottom-row {
+  display: flex;
+}
+
+@media screen and (max-width: 992px) {
+  .top-row,
+  .bottom-row {
+    flex-direction: column;
+  }
+}/*# sourceMappingURL=MainContent.css.map */

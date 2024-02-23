@@ -1,0 +1,19 @@
+// Main styles
+@import '../resets/variables';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+html {
+    width: 100vw;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    background-color: $seventh-color;
+    overflow-x: hidden;
+}
