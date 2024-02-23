@@ -1,0 +1,108 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap to the next line on smaller screens */
+  justify-content: space-around;
+  align-items: center;
+  padding: 1px;
+  height: 90%;
+}
+
+.card {
+  flex: 1;
+  max-width: 400px; /* Set the width of each card */
+  height: 500px; /* Set the height of each card */
+  padding: 20px; /* Add padding to the cards */
+  margin: 10px; /* Adjust the margin around each card */
+  background-color: #ffffff; /* Set your desired card background color */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.card.card-with-image {
+  position: relative;
+  height: 500px; /* Set the height of the card with image */
+  width: 400px; /* Set the width of the card with image */
+  border: solid rgb(255, 255, 255);
+}
+
+.card-image-container {
+  overflow: hidden;
+  border: 5px solid cadetblue;
+  border-radius: 9px;
+  box-shadow: 0 0 10px black;
+  width: 50%; /* Set the width of the circular image container */
+  height: 40%; /* Set the height of the circular image container */
+  margin: 0 auto 5px; /* Adjust the bottom margin for the image container */
+}
+
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h2 {
+  color: #333; /* Set your desired heading color */
+}
+
+.card p {
+  color: #666; /* Set your desired paragraph color */
+  font-size: 14px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .card {
+      flex: 1 0 100%; /* Full width for smaller screens */
+      margin: 10px 0; /* Adjust the margin for smaller screens */
+  }
+
+  .card.card-with-image {
+      width: 100%; /* Full width for cards with images on smaller screens */
+  }
+}
+.progress {
+  position: relative;
+  width: 210px;
+  height: 30px;
+  background: #9cbab4;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 0 auto; /* Agrega esta línea para centrar la barra de progreso horizontalmente */
+}
+.progress__fill{
+  width: 0%;
+  height: 100%;
+  background: #00C6AB;
+  transition: all 0.2s;
+}
+.progress__text {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  font: bold 14px 'Quicksand', sans-serif;
+  color: #ffffff;
+}
+#continue-course-btn {
+  background-color: #ffffff;
+  border: solid black;
+  border-radius: 20px;
+  box-shadow: 7px rgba(0, 0, 0, 0.788);
+  color: rgb(0, 0, 0);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#continue-course-btn:hover {
+  background-color: #dddddd;
+  color: #333333;
+  box-shadow: 7px rgba(0, 0, 0, 0.9); /* Cambia la sombra al pasar el cursor */
+}

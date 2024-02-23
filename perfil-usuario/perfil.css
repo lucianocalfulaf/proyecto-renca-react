@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1px;
+    height: 90%;
+    background-color: var(--body-color); /* Asegúrate de definir la variable --body-color */
+}
+
+.card {
+    flex: 1 1 400px; /* Cambiado para permitir que los elementos se ajusten correctamente */
+    max-width: 400px;
+    height: 500px;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card.card-with-image {
+    position: relative;
+    height: 500px;
+    width: 400px;
+    border: solid rgb(255, 255, 255);
+}
+
+.card-image-container {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 70px; /* Ajustado para que sea un círculo perfecto */
+    height: 70px; /* Ajustado para que sea un círculo perfecto */
+    margin: 0 auto 5px;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #000000;
+}
+
+.card h2 {
+    color: #333;
+}
+
+.card p {
+    color: #666;
+    font-size: 14px;
+}
+
+.progress {
+    position: relative;
+    width: 210px;
+    height: 30px;
+    background: #9cbab4;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.progress__fill {
+    width: 0%;
+    height: 100%;
+    background: #00C6AB;
+    transition: all 0.2s;
+}
+
+.progress__text {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font: bold 14px 'Quicksand', sans-serif;
+    color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(100% - 20px); /* Ajustado para que ocupe todo el ancho disponible con margen */
+        margin: 10px 0; /* Cambiado para que el margen sea consistente en dispositivos más pequeños */
+    }
+
+    .card.card-with-image {
+        width: calc(100% - 20px); /* Ajustado para que ocupe todo el ancho disponible con margen */
+    }
+}
+.card2 {
+    flex: 1;
+    max-width: 400px; 
+    height: 500px; 
+    padding: 20px; 
+    margin: 10px; 
+    background-color: #ffffff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card2.card-with-image2 {
+    position: relative;
+    height: 500px; 
+    width: 400px; 
+    border: solid rgb(255, 255, 255);
+}
+
+.card-image-container2 {
+    overflow: hidden;
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 50px;
+    height: 50px;
+}
+
+.card-image-container2 img {
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: cover;
+    border: 2px solid #ffffff; 
+}
+
+.card2 h2 {
+    color: #333; 
+}
+
+.card2 p {
+    color: #666; 
+    font-size: 14px;
+}
+
+.progress2 {
+    position: relative;
+    width: 210px;
+    height: 30px;
+    background: #9cbab4;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;;
+}
+
+.progress__fill2 {
+    width: 0%;
+    height: 100%;
+    background: #00C6AB;
+    transition: all 0.2s;
+}
+
+.progress__text2 {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font: bold 14px 'Quicksand', sans-serif;
+    color: #ffffff;
+}
+
+.card3 {
+    flex: 1;
+    max-width: 400px; 
+    height: 500px; 
+    padding: 20px; 
+    margin: 10px; 
+    background-color: #ffffff; 
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card3.card-with-image3 {
+    position: relative;
+    height: 500px; 
+    width: 400px; 
+    border: solid rgb(255, 255, 255)
+}
+
+.card-image-container3 {
+    width: 50px; 
+    height: 50px; 
+    margin: 0 auto; 
+    border-radius: 50%; 
+    overflow: hidden; 
+}
+
+.card-image-container3 img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50px;
+    border: 2px solid #ffffff;
+}
+
+.card3 h2 {
+    color: #333; 
+}
+
+.card3 p {
+    color: #666; 
+    font-size: 14px;
+}
+
+.card4 {
+    flex: 1;
+    max-width: 400px; 
+    height: 500px; 
+    padding: 20px; 
+    margin: 10px; 
+    background-color: #ffffff; 
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card4.card-with-image4 {
+    position: relative;
+    height: 500px; 
+    width: 400px; 
+    border: solid rgb(255, 255, 255);
+}
+
+.card-image-container4 {
+    width: 80px; 
+    height: 50px; 
+    margin: 0 auto; 
+    border-radius: 100%; 
+}
+
+.card-image-container4 img {
+    width: 40px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid #ffffff; 
+}
+
+.card4 h2 {
+    color: #333; 
+}
+
+.card4 p {
+    color: #666; 
+    font-size: 14px;
+}
