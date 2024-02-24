@@ -10,13 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
     "axios": "^1.6.7",
-=======
     "bcrypt": "^5.1.1",
     "cloudinary": "^2.0.1",
     "dotenv": "^16.4.5",
->>>>>>> eb83eb5064ad987bdf0a9f91dce506dbcb4b13f8
     "express": "^4.18.2",
     "express-fileupload": "^1.4.3",
     "jsonwebtoken": "^9.0.2",
