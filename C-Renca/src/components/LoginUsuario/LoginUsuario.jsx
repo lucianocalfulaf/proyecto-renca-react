@@ -1,11 +1,29 @@
 import './LoginUsuario.css';
 
+//LocalStorage implementado, falta probar que funcione
+//Como está enrutado, debería guardarse el login para todas las páginas
+//Por seguridad del usuario, no se almacena la contraseña
+//No debería afectar al JWT 
 function LoginForm() {
-    const login = () => {
-      // Simulación de inicio de sesión exitoso
+  const login = () => {
+    const email = document.getElementById('email').value;
+    const contraseña = document.getElementById('password').value;
+      
+    // Aquí deberías verificar las credenciales en el servidor
+    if (email === 'email' && contraseña === 'contraseña') {
+      // Iniciar sesión y almacenar el ID del usuario en el almacenamiento local
+      localStorage.setItem('userID', email); // Almacena el email como ID del usuario
       alert('Inicio de sesión exitoso');
-    };
-  
+
+      // Redireccionar a la página principal de usuario, a definir
+      window.location.href = '/CatalogoCursos';
+    } else {
+      alert('Credenciales incorrectas');
+    }
+  }; 
+
+
+
     const forgotPassword = () => {
       // Simulación de restablecimiento de contraseña
       alert('Se ha enviado un correo electrónico para restablecer su contraseña');
@@ -16,10 +34,21 @@ function LoginForm() {
       alert('Redirigiendo a la página de registro');
     };
   
-    const adminLogin = () => {
-      // Simulación de redirección a la página de inicio de sesión de administrador
-      alert('Redirigiendo a la página de inicio de sesión de administrador');
-    };
+
+  //Local Storage para el Admin    
+  const adminLogin = (email, contraseña) => {
+    // Aquí deberías verificar las credenciales de administrador en el servidor
+    if (email === 'admin' && contraseña === 'admincontraseña') {
+      // Iniciar sesión de administrador 
+      localStorage.setItem('adminID', email); // Almacena el email de administrador como ID de administrador
+      alert('Inicio de sesión de administrador exitoso');
+
+      // Hay que definir cuál será la página principal del Admin
+      window.location.href = '/';
+    } else {
+      alert('Credenciales de administrador incorrectas');
+    }
+  }; 
   
     return (
       <div className="login-bg">
