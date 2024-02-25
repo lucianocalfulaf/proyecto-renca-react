@@ -1,49 +1,26 @@
 import './TarjetaCursos.css';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom'; // Importa Link desde react-router-dom
 
 function TarjetaCursos() {
-  const cursos = {
-    data: [
-      {
-        cursoName: "Curso Desarrollo Web",
-        category: "Tecnologia",
-        duration: "20hrs",
-        image: "./src/assets/curso.jpg",
-      },
-      {
-        cursoName: "Curso Creative",
-        category: "Tecnologia",
-        duration: "10hrs",
-        image: "./src/assets/aprendizaje.jpg",
-      },
-      {
-        cursoName: "Curso Diseño Mockup",
-        category: "Tecnologia",
-        duration: "10hrs",
-        image: "./src/assets/curso.jpg",
-      },
-      {
-        cursoName: "Curso Metologias Agiles",
-        category: "Metodologia",
-        duration: "15hrs",
-        image: "./src/assets/aprendizaje.jpg",
-      },
-      {
-        cursoName: "Curso Diseño Web",
-        category: "Diseño",
-        duration: "20hrs",
-        image: "./src/assets/curso.jpg",
-      },
-      {
-        cursoName: "Curso Programacion",
-        category: "Tecnologia",
-        duration: "30hrs",
-        image: "./src/assets/aprendizaje.jpg",
-      },
-      
-    ],
-  };
+  // Captura los datos de la base de datos
+  const [cursos, setCursos] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:4000/cursos");
+        setCursos(response.data);
+      } catch (error) {
+        console.error('Hubo un problema al obtener los cursos:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  // Filtros
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Todos');
 
@@ -55,17 +32,18 @@ function TarjetaCursos() {
     setSelectedCategory(event.target.value);
   };
 
-  const filteredCursos = cursos.data.filter((curso) => {
+  const filteredCursos = cursos.filter((curso) => {
     return (
-      curso.cursoName.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedCategory === 'Todos' || curso.category === selectedCategory)
+      curso.nombreCurso.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      (selectedCategory === 'Todos' || curso.filtro === selectedCategory)
     );
   });
 
   return (
+    
     <div className="container">
       <div className="row mb-3">
-        <div className="col-md-6">
+        <div className="col-md-12">
           <input
             type="text"
             className="form-control"
@@ -74,7 +52,8 @@ function TarjetaCursos() {
             onChange={handleSearch}
           />
         </div>
-        <div className="col-md-6">
+      
+        <div className="col-md-12">
           <select
             className="form-select"
             value={selectedCategory}
@@ -84,21 +63,22 @@ function TarjetaCursos() {
             <option value="Tecnologia">Tecnología</option>
             <option value="Metodologia">Metodología</option>
             <option value="Diseño">Diseño</option>
-            {/* Agrega más opciones de categorías si es necesario */}
           </select>
         </div>
       </div>
       <div className="row">
         {filteredCursos.map((curso, index) => (
-          <div key={index} className={`col-md-4 mb-4 ${curso.category}`}>
-            <div className="card">
-              <img src={curso.image} className="card-img-top" alt={curso.cursoName} />
-              <div className="card-body">
-                <h5 className="card-title">{curso.cursoName}</h5>
-                <p className="card-text">Duración: {curso.duration}</p>
-                <p className="card-text">Categoría: {curso.category}</p>
-                {/* Agrega aquí cualquier otra información adicional que desees mostrar */}
-              </div>
+          <div key={curso._id} className='col-4 mx-auto'>
+            <div className='card' style={{ maxWidth: '18rem', maxHeight: '30rem'}}>
+                <img src={curso.imagen?.url} alt={curso.nombreCurso} className='card-img-top' />
+                <div className='card-body '>
+                <Link to={`/curso/${curso._id}`}>
+                  <h5 className='card-title '>{curso.nombreCurso}</h5>
+                </Link>
+                  <p className='card-text'>Filtro: {curso.filtro}</p>
+                  <p className='card-text'>Duración: {curso.duracion} hrs</p>
+                  <p className='card-text'>Profesor a Cargo: {curso.profesor}</p>
+                </div>
             </div>
           </div>
         ))}
