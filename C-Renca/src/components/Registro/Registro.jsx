@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './Registro.css';
-import logo from '../../../public/favicon.png';
+import logo from '/favicon.png';
 
 function Registro() {
   const [formData, setFormData] = useState({
