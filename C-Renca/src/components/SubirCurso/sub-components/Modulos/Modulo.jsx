@@ -42,16 +42,18 @@ function AgregarModulo() {
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      // Aquí puedes realizar acciones con los datos del formulario principal, como enviarlos a un servidor, etc.
-      console.log('Formulario principal enviado:', formData);
+      // Combina los datos del módulo principal con los datos de los módulos adicionales
+      const formDataCompleta = {
+        ...formData,
+        modulosAdicionales: modulosAdicionales
+      };
+      // Aquí puedes realizar acciones con los datos combinados, como enviarlos a un servidor, etc.
+      console.log('Formulario enviado:', formDataCompleta);
       // Limpiar el formulario principal después de enviarlo
-      setFormData({
-        nombreModulo: '',
-        desModulo: ''
-      });
+    
       // Cerrar el popup después de enviar el formulario
       closePopup();
-      alert('Módulo guardado con éxito'); // Agregar un mensaje de éxito al usuario
+      alert('Módulo(s) guardado(s) con éxito');
     };
   
     const handleAgregarModulo = () => {
@@ -63,8 +65,9 @@ function AgregarModulo() {
       const { name, value } = e.target;
       // Actualizar el módulo correspondiente en la lista de módulos adicionales
       const nuevosModulos = [...modulosAdicionales];
-      nuevosModulos[index][name] = value;
+      nuevosModulos[index] = { ...nuevosModulos[index], [name]: value };
       setModulosAdicionales(nuevosModulos);
+      console.log("Estado actualizado de los módulos adicionales:", nuevosModulos);
     };
   
     return (
@@ -87,15 +90,15 @@ function AgregarModulo() {
                   <br />
 {/*Agregar módulos adicionales */}
                   {modulosAdicionales.map((modulo, index) => (
-                    <div key={index}>
-                      <label htmlFor={`nombreModulo${index}`}>{`Módulo ${index + 2}: Nombre del módulo:`}</label>
-                      <input type="text" id={`nombreModulo${index}`} name={`nombreModulo${index}`} value={modulo.nombreModulo} onChange={(e) => handleModuloInputChange(index, e)} />
-                      <br />
-                      <label htmlFor={`desModulo${index}`}>Descripción:</label>
-                      <input type="text" id={`desModulo${index}`} name={`desModulo${index}`} value={modulo.desModulo} onChange={(e) => handleModuloInputChange(index, e)} />
-                      <br />
-                    </div>
-                  ))}
+                      <div key={index}>
+                    <label htmlFor={`nombreModulo${index}`}>{`Módulo ${index + 2}: Nombre del módulo:`}</label>
+                    <input type="text" id={`nombreModulo${index}`} name={`nombreModulo${index}`} value={modulo.nombreModulo} onChange={(e) => handleModuloInputChange(index, e)} />
+                    <br />
+                    <label htmlFor={`desModulo${index}`}>Descripción:</label>
+                    <input type="text" id={`desModulo${index}`} name={`desModulo${index}`} value={modulo.desModulo} onChange={(e) => handleModuloInputChange(index, e)} />
+                    <br />
+                  </div>
+                ))}
                   <button type="button" onClick={handleAgregarModulo}>Agregar más módulos</button>
 {/*Enviar la info */}
                   <button type="submit">Enviar</button>
@@ -110,7 +113,7 @@ function AgregarModulo() {
             <h2>Módulos agregados</h2>
             <select>
               {modulosDropDown.map((modulo, index) => (
-                <option key={index}>{`${index + 1}: ${modulo.nombreModulo}`}</option>
+                <option key={index}>{`${index + 1}: ${modulo.nombreModulo}`} - {modulo.desModulo}</option>
               ))}
             </select>
           </div>
@@ -120,4 +123,3 @@ function AgregarModulo() {
   }
   
   export default AgregarModulo;
-  
