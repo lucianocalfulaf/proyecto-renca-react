@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import './Formulario.css'; // Importa el archivo CSS
 
 function Formulario() {
@@ -51,38 +51,30 @@ function Formulario() {
         />
       </div>
       <div className="form-group">
-        <label htmlFor="requisitos" className="label">Requisitos:</label>
+        <label htmlFor="profesor" className="label">Profesor:</label>
         <input
           type="text"
-          id="requisitos"
+          id="profesor"
           value={requisitos}
           onChange={(e) => setRequisitos(e.target.value)}
           className="input"
         />
       </div>
-      <div className="dropdown">
-        <button onClick={toggleDropdown} className="dropdown-button">
+      <div className="dropdown-categoria">
+        <button onClick={toggleDropdown} className="dropdown-button-categoria">
           {selectedOption ? selectedOption : 'Seleccione categoría'}
         </button>
         {isOpen && (
-          <div className="dropdown-menu">
+          <div className="dropdown-menu-categoria">
             {opcionesDropdown.map((option, index) => (
-              <div key={index} className="dropdown-item" onClick={() => handleOptionClick(option)}>
+              <div key={index} className="dropdown-item-categoria" onClick={() => handleOptionClick(option)}>
                 {option}
               </div>
             ))}
           </div>
         )}
       </div>
-      <div className="form-group">
-        <label htmlFor="contenidos" className="label">Contenido del curso:</label>
-        <textarea
-          id="contenidos"
-          value={contenidos}
-          onChange={(e) => setContenidos(e.target.value)}
-          className="textarea"
-        />
-      </div>
+      
     </form>
   );
 }
