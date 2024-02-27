@@ -6,13 +6,13 @@ import './LoginUsuario.css';
 //No debería afectar al JWT 
 function LoginForm() {
   const login = () => {
-    const email = document.getElementById('email').value;
+    const name = document.getElementById('email').value;
     const contraseña = document.getElementById('password').value;
       
     // Aquí deberías verificar las credenciales en el servidor
-    if (email === 'email' && contraseña === 'contraseña') {
+    if (name === 'name' && contraseña === 'contraseña') {
       // Iniciar sesión y almacenar el ID del usuario en el almacenamiento local
-      localStorage.setItem('userID', email); // Almacena el email como ID del usuario
+      localStorage.setItem('userID', name); // Almacena el email como ID del usuario
       alert('Inicio de sesión exitoso');
 
       // Redireccionar a la página principal de usuario, a definir
