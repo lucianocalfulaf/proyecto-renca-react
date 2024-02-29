@@ -6,12 +6,16 @@ import { useState, useEffect } from 'react';
 function TarjetaCursos() {
   // Captura los datos de la base de datos
   const [cursos, setCursos] = useState([]);
+  const [filtros, setFiltros] = useState([]); // Agrega un estado para los filtros
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://localhost:4000/cursos");
         setCursos(response.data);
+        // Extrae los valores únicos de la propiedad 'filtro' de los cursos
+        const uniqueFiltros = [...new Set(response.data.map(curso => curso.filtro))];
+        setFiltros(uniqueFiltros);
       } catch (error) {
         console.error('Hubo un problema al obtener los cursos:', error);
       }
@@ -22,28 +26,27 @@ function TarjetaCursos() {
 
   // Filtros
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('Todos');
+  const [selectedFilter, setSelectedFilter] = useState('Todos'); // Cambia el estado de selectedCategory a selectedFilter
 
   const handleSearch = (event) => {
     setSearchTerm(event.target.value);
   };
 
-  const handleCategoryChange = (event) => {
-    setSelectedCategory(event.target.value);
+  const handleFilterChange = (event) => {
+    setSelectedFilter(event.target.value);
   };
 
   const filteredCursos = cursos.filter((curso) => {
     return (
       curso.nombreCurso.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedCategory === 'Todos' || curso.filtro === selectedCategory)
+      (selectedFilter === 'Todos' || curso.filtro === selectedFilter)
     );
   });
 
   return (
-    
-    <div className="container">
-      <div className="row mb-3">
-        <div className="col-md-12">
+    <div className="container-fluid">
+      <div className="row mb-12">
+        <div className="col-4-md-6">
           <input
             type="text"
             className="form-control"
@@ -53,16 +56,16 @@ function TarjetaCursos() {
           />
         </div>
       
-        <div className="col-md-12">
+        <div className="col-4-md-6">
           <select
             className="form-select"
-            value={selectedCategory}
-            onChange={handleCategoryChange}
+            value={selectedFilter}
+            onChange={handleFilterChange}
           >
             <option value="Todos">Todos</option>
-            <option value="Tecnologia">Tecnología</option>
-            <option value="Metodologia">Metodología</option>
-            <option value="Diseño">Diseño</option>
+            {filtros.map((filtro, index) => (
+              <option key={index} value={filtro}>{filtro}</option>
+            ))}
           </select>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import './Boton.css';
+import React, { useState } from 'react';
 
 function Boton({ guardarArchivosSubidos }) {
   // Estado para manejar si los campos del formulario están completos o no

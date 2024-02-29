@@ -1,0 +1,34 @@
+.dropdown-requisito {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-button-requisito {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .dropdown-menu-requisito {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+  }
+  
+  .dropdown-item-requisito {
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .dropdown-item-requisito:hover {
+    background-color: #f1f1f1;
+  }
