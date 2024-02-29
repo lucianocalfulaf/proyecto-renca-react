@@ -12,26 +12,50 @@
     height: 100vh;
     display: grid;
     justify-items: center;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: .1fr 1fr 1fr;
+
+    .section-title {
+        display: flex;
+        color: $secondary-color;
+        font-family: poppins;
+        text-align: left;
+        margin-top: -3%;
+        margin-left: -75%;
+        grid-row-start: 0;
+        grid-row-end: 1;
+
+        .fa-chalkboard-user {
+            margin-right: 15px;
+        }
+    }
 
     .top-row-3 {
         margin-left: 5%;
-        margin-top: 5%;
+        margin-top: 0%;
         width: 100vw;
         height: 50%;
         display: grid;
-        grid-row-start: 0;
-        grid-row-end: 1;
+        grid-row-start: 1;
+        grid-row-end: 2;
         grid-template-columns: 1fr .5fr; 
         align-items: center;
     }
       
     .bottom-row-3 {
         display: grid;
+        grid-template-rows: .1fr 1fr;
         width: 90%;
-        grid-row-start: 1;
-        grid-row-end: 2;
+        grid-row-start: 2;
+        grid-row-end: 3;
         margin-top: 5%;
+
+        .section-subtitle {
+            color: rgb(31, 25, 25);
+            font-family: poppins;
+            text-align: left;
+            margin-left: 2%;
+            margin-bottom: 3%;
+        }
     }
       
 }

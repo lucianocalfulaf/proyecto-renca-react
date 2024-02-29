@@ -1,0 +1,28 @@
+@import '../../../../resets/resets';
+@import '../../../../resets/variables';
+
+// Main Content
+.mainHA {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: $seventh-color;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    background-image: url("/opacity-favicon.png"); // Cambiar Logo
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 30%;
+
+    h1 {
+        color: $quinary-color;
+        margin-top: 5%;
+        margin-left: 7.5%;
+        position: absolute;
+        left: 0;
+    }
+}

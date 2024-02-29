@@ -3,7 +3,7 @@ function FormularioInicioSesion() {
       <div className="formulario-is">
         <h3 className="titulo-is">Iniciar Sesión</h3>
         <br />
-        <img src="/public/Logo C-Renca.png" alt="Iniciar Sesion Imagen" className="logo-is" />
+        <img src="/Logo C-Renca.png" alt="Iniciar Sesion Imagen" className="logo-is" />
         <br />
         <form className="datos">
           <input

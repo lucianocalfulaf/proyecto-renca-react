@@ -39,6 +39,11 @@
     margin-top: 20px;
 }
 
+.link {
+    display: flex;
+    justify-content: center;
+}
+
 .logo-2 {
     height: 50%;
     width: 50%;

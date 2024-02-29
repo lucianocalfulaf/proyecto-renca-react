@@ -1,4 +1,5 @@
 import './LoginUsuario.css';
+import { Link } from 'react-router-dom';
 
 function LoginForm() {
     const login = () => {
@@ -27,7 +28,7 @@ function LoginForm() {
             <form className="formulario-2">
             <h3 className="titulo-login">Iniciar Sesión</h3>
             <br />
-            <img src="public\Logo C-Renca.png" alt="Iniciar Sesion Imagen" className="logo-2" />
+            <Link className="link" to="/" title="Home"><img src="\Logo C-Renca.png" alt="Iniciar Sesion Imagen" className="logo-2" /></Link>
             <br />
             <table>
                 <tbody>
@@ -54,7 +55,7 @@ function LoginForm() {
                 <a href="#" onClick={register}>¿No está registrado? Regístrese</a>
             </div>
             <div className="mt-2 text-center">
-                <a href="#" onClick={adminLogin}>¿Es administrador? Ingresar perfil administrador</a>
+                <Link to="/login-admin"><a href="#" onClick={adminLogin}>¿Es administrador? Ingresar perfil administrador</a></Link>
             </div>
             </form>
         </div>

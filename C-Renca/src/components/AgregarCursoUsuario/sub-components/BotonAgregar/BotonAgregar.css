@@ -1,25 +1,24 @@
-.column-3 {
+.column-3ba {
     flex: 1;
     height: 400px;
 }
-.column-3 {
+
+.column-3ba {
     width: 100%; 
     height: auto;
-  }
+}
 
-.content-container {
-    margin-top: 90px;
+.content-container-ba {
     margin-left: 200px;
     margin-right: 200px;
     padding: 20px 35px 10px 35px;
-    text-align: center;
-    background-color: #D9D9D9;
+    text-align: center; 
+    background-color: #F59F30;
     border-radius: 20px;
 }
 
-.content-container button {
+.content-container-ba button {
     padding: 5px 50px;
-    background-color: white;
     color: black;
     border: none;
     border-radius: 10px;
@@ -29,13 +28,14 @@
 }
 
 
-.content-container button:hover {
-    background-color: #60BDB1;
+.content-container-ba button:hover {
+    background-color: #E95929;
+    color: white;
     transform: scale(1.01);
 }
 
 @media screen and (max-width: 768px) {
-    .content-container {
+    .content-container-ba {
         margin-top: 50px; 
         margin-left: 10px; 
         margin-right: 10px; 

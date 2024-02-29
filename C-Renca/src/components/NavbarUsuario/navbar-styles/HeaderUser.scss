@@ -1,0 +1,52 @@
+@import '../../../resets/resets';
+@import '../../../resets/variables';
+
+@mixin gridColumn($columns) {    
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+}
+
+// Header
+.headerUser {
+    display: grid;
+    grid-template-rows: .8fr .4fr;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 0;
+    grid-row-end: 2;
+    width: 100%;
+    
+
+    // Encabezado
+    &__container {
+        height: 100%;
+        width: 100vw;
+        display: grid;
+        @include gridColumn(4);
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+    }
+
+    // Favicon
+    &__favicon{
+        grid-column-start: 4;
+        grid-column-end: 5;
+        width: 10%;
+        margin-left: 30%;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // Logo Renca
+    &__logo {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        width: 60%;
+        margin-right: 30%;
+    }
+}

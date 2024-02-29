@@ -2,8 +2,8 @@ import './BotonAgregar.css'
 
 function BotonAgregar () {
     return (
-        <div className="column-3">
-            <div className="content-container">
+        <div className="column-3ba">
+            <div className="content-container-ba">
                 <button>Agregar Curso</button>
             </div>
         </div>

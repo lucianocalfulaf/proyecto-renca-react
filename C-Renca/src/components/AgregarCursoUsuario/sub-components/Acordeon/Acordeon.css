@@ -27,6 +27,7 @@
 .accordion-panel.active {
     max-height: 100%;
     max-height: fit-content;
+    color: black;
 }
 
 @media screen and (max-width: 992px) {

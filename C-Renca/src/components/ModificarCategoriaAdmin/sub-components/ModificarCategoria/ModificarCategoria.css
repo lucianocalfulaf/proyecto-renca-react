@@ -1,0 +1,174 @@
+/* Estilos formulario */
+
+/* Contenedor Principal */
+.mc-container {
+    display: grid;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+/* Titulo N° 1 */
+.tituloFormularioSubida {
+    color: hsl(172, 41%, 56%);
+    font-family: poppins;
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 2%;
+}
+
+/* Contenedor Formulario */
+/* .tituloFormularioSubida2 {
+    font-family: poppins;
+} */
+  
+.contenedorFormulario {
+    margin-top: -100px;
+    margin-bottom: 50px;
+    width: 90vw;
+    height: 70vh;
+    background-color: rgb(222, 219, 219);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+}
+
+/* Descripción */
+.descripcionFormulario {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15%;
+    width: 100%;
+    margin-left: 14%;
+}
+
+.textoFormulario {
+    margin-bottom: 20px;
+    font-family: poppins;
+} 
+
+.tablaFormulario{
+    margin-right: 200px;
+    margin-top: -100px;
+}
+
+.buttonFormulario {
+    background-color: hsl(172, 41%, 56%);
+    width: 280px;
+    text-align: left;
+    color: #ffff;
+    font-family: poppins;
+    border-radius: 10px;
+    margin-right: 50px;
+}
+
+.buttonFormulario p {
+    color: #ffff;
+    font-family: poppins;
+}
+
+.buttonFormulario:hover {
+   background-color: #F59F30;
+}
+
+.selectButtonFormulario {
+    background-color: hsl(172, 41%, 56%);
+    width: 280px;
+    height: 40px;
+    text-align: left;
+    color: #ffff;
+    font-family: poppins;
+    border-radius: 10px;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.selectButtonFormulario:hover {
+    background-color: #F59F30;
+}
+
+.labelFormulario {
+    background-color: #ffff;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-top: 15px;
+    width: 250px;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: poppins;
+}
+
+
+/* Contenedor Modificar Cambios */
+.PrevisualizacionFormulario { 
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.PrevisualizacionFormulario h3 {
+	margin-top: 2%;
+}
+
+.buttonSubir {
+    background-color: hsl(172, 41%, 56%);
+    width: 20%;
+    height: 5%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    border-radius: 10px;
+    color: #ffff;
+    font-family: poppins;
+    margin-top: 1%;
+    transition: 150ms ease-out;
+}
+
+.buttonSubir:hover {
+	background-color: #C8D300;
+    transform: scale(1.1);
+    transition: 150ms ease-in;
+}
+
+.buttonEliminar {
+    background-color: rgb(255, 98, 0);
+    width: 20%;
+    height: 5%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    border-radius: 10px;
+    color: #ffff;
+    font-family: poppins;
+    margin-top: 3%;
+    transition: 150ms ease-out;
+}
+
+.buttonEliminar:hover {
+	background-color: #af0e02;
+    transform: scale(1.1);
+    transition: 150ms ease-in;
+}
+
+/* CSS para Miniatura */
+.contenedorImagen{
+	width: 160px;
+    height: 160px;
+    margin-top: 5%;
+    border: 3px solid #60BDB1;
+    background-color: rgb(232, 230, 230);
+}  

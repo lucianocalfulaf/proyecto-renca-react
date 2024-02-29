@@ -1,5 +1,6 @@
 import './SearchBar.scss';
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Search = () => {
 
@@ -34,23 +35,23 @@ const Search = () => {
             
             <br />
 
-            <h1>Filtro de Búsqueda de Alumnos</h1>
+            <h1>Alumnos C-Renca</h1>
             {/* Input */}
-            <input value={search} onChange={searcher} type="text" placeholder="search" className="form-control" />
+            <input value={search} onChange={searcher} type="text" placeholder="Buscar Alumno..." className="form-control" />
 
             {/* Tabla */}
             <table className='table table-striped table-hover mt-5 shadow-lg'>
                 <thead>
                     <tr className='bg-curso text-white'>
-                        <th>Name</th>
-                        <th>User Name</th>
+                        <th>Nombre</th>
+                        <th>Nombre de Usuario</th>
                     </tr>
                 </thead>
                 <tbody>
                     { result.map( (user) => (
                         <tr key={user.id}>
-                            <td>{user.name}</td>
-                            <td>{user.username}</td>
+                            <td><Link to="/perfil-alumno" className='link-alumno'>{user.name}</Link></td>
+                            <td><Link to="/perfil-alumno" className='link-alumno'>{user.username}</Link></td>
                         </tr>
                     ))}
                 </tbody>

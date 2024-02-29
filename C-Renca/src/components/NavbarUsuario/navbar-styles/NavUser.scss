@@ -1,0 +1,159 @@
+@import '../../../resets/resets';
+@import '../../../resets/variables';
+
+// Navbar
+.navbarUser {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: $secondary-color;
+    width: 100vw;
+    height: 50%;
+
+    // Estilo general de lista
+    &__list {
+        width: 100vw;
+        margin-top: 1%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+        justify-items: center;
+        text-align: center;
+        font-size: $font-size;
+        color: $text-color;
+        list-style: none;
+        transition: 150ms ease-out;
+
+        // Íconos de la lista
+        li i {
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        li i:hover {
+            transform: scale(1.1);
+            transition: 150ms ease-in;
+            color: $primary-color;
+        }
+    }
+
+    
+    // Íconos de la lista
+    &__item--icons  {
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+
+    &__icon i {
+        text-decoration: none;
+        padding: $main-padding;
+        color: $text-color;
+        transition: 150ms ease-out;
+    }     
+
+    &__icon i:hover {
+        color: $primary-color;
+        transform: $transformation;
+        transition: 150ms ease-in;
+    } 
+
+    // Enlaces de la navbar
+    a {
+        text-decoration: none;
+        color: $text-color;
+    }
+
+    a:hover {
+        color:$primary-color;
+    }
+    
+    // Items de la lista
+
+    // Explorar 
+    &__item--explorar {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    &__item--explorar:hover {
+        transform: scale(1.1);
+        transition: 150ms ease-in-out;
+    }
+
+    // Mi Perfil 
+    &__item--profile {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    // Contenedor de buscador y modo oscuro
+    &__search {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        grid-column-start: 3;
+        grid-column-end: 5;
+    }
+
+
+    // Registro / Inicio de Sesión
+    &__item--registro {
+        width: 5%;
+        // display: flex;
+        justify-content: space-around;
+        align-content: center;
+        grid-column-start: 5;
+        grid-column-end: 7;
+        transition: 150ms ease-out;
+
+        .fa-solid {
+            margin-top: 3px;
+            margin-right: 5px;
+        }
+
+        a {
+            margin-left: 3px;
+            margin-right: 3px;
+        }
+    }
+
+    &__item--registro:hover {
+        transform: scale(1.1);
+        transition: 150ms ease-in;
+        color: $primary-color;
+    }
+
+
+    // Logged
+    &__item--logged {
+        width: 5%;
+        // display: flex;
+        justify-content: space-around;
+        align-content: center;
+        grid-column-start: 5;
+        grid-column-end: 7;
+        transition: 150ms ease-out;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__item--logged:hover {
+        transform: scale(1.1);
+        transition: 150ms ease-in;
+        color: $primary-color;
+    }
+
+}
+

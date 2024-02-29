@@ -1,9 +1,9 @@
 import './Footer.scss';
 
-const Footer = ({location}) => {
+const Footer = ({ location }) => {
     let color;
   
-    if (location== 'Usuario' || location == 'Principal') {
+    if (location == 'Usuario' || location == 'Principal') {
       color = '#E95929';
   
     } else {
@@ -15,8 +15,8 @@ const Footer = ({location}) => {
           <div className="grupo-a">
             <div className="box-a">
               <figure>
-                <a href="https://renca.cl/">
-                  <img src="/logo-renca.png" alt="Logo municipalidad" />
+                <a href="https://renca.cl">
+                  <img src="/logo-renca.png" alt="Logo municipalidad" title="Sitio Web Municipalidad De Renca"/>
                 </a>
               </figure>
               <div className="box-info">

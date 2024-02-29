@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Registro.css';
 import logo from '/favicon.png';
 
@@ -43,7 +44,7 @@ function Registro() {
         <form className="formulario">
           <h3 className="titulo">Registrarse</h3>
           <br />
-          <img src={logo} alt="Registrarse Imagen" className="logo" />
+          <Link to="/" className="link" title="Home"><img src={logo} alt="Registrarse Imagen" className="logo" /></Link>
           <br />
           <table>
             <tbody>

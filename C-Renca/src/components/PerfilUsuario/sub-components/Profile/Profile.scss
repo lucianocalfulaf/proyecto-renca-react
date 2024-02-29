@@ -1,0 +1,314 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1px;
+    height: 90%;
+    margin-top: -5%;
+    background-color: var(--body-color); /* Asegúrate de definir la variable --body-color */
+}
+
+.card.card-with-image {
+    flex: 1 1 300px; /* Cambiado para permitir que los elementos se ajusten correctamente */
+    max-width: 300px;
+    height: 550px;
+    padding: 20px;
+    margin: 10px;
+    background-color: rgb(231, 226, 226);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border: solid rgb(255, 255, 255);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card-image-container {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 150px; /* Ajustado para que sea un círculo perfecto */
+    height: 150px; /* Ajustado para que sea un círculo perfecto */
+    margin: 0 auto 5px;
+}
+
+.card-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #F59F30;
+}
+
+.card-content {
+    width: 80%;
+    display: grid;
+    justify-items: center;
+    line-height: 1em;
+    color: #666;
+    text-align: center;
+}
+
+.card h2 {
+    color: #333;
+}
+
+.card p {
+    margin-top: 5%;
+    width: 100%;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border-radius: 50px;
+}
+
+.card a {
+    margin-top: 5%;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border-radius: 50px;
+}
+
+.modificar-datos {
+    margin-top: 10%;
+    width: 50%;
+    color: #fff;
+    background-color: #F59F30;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border: 2px solid #0492D0;
+    border-radius: 50px;
+    transition: 150ms ease-out;
+}
+
+.modificar-datos:hover {
+    background-color: #0492D0;
+    transform: scale(1.1);
+    transition: 150ms ease-in;
+}
+
+.progress {
+    position: relative;
+    width: 210px;
+    height: 30px;
+    background: #9cbab4;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+}
+
+.progress__fill {
+    width: 0%;
+    height: 100%;
+    background: #00C6AB;
+    transition: all 0.2s;
+}
+
+.progress__text {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font: bold 14px 'Quicksand', sans-serif;
+    color: #ffffff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(100% - 20px); /* Ajustado para que ocupe todo el ancho disponible con margen */
+        margin: 10px 0; /* Cambiado para que el margen sea consistente en dispositivos más pequeños */
+    }
+
+    .card.card-with-image {
+        width: calc(100% - 20px); /* Ajustado para que ocupe todo el ancho disponible con margen */
+    }
+}
+.card2 {
+    flex: 1;
+    max-width: 300px; 
+    height: 500px; 
+    padding: 20px; 
+    margin: 10px; 
+    background-color: rgb(231, 226, 226); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card2.card-with-image2 {
+    position: relative;
+    height: 550px; 
+    width: 400px; 
+    border: solid rgb(255, 255, 255);
+}
+
+.card-image-container2 {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 50px;
+    height: 100px;
+    transform: scale(2);
+    color: #E95929;
+}
+
+.card-content2 {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    line-height: 1em;
+    color: #666;
+    text-align: center;
+}
+
+.card2 h2 {
+    color: #333; 
+}
+
+.card2 p {
+    margin-top: 5%;
+    width: 80%;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border-radius: 50px;
+}
+
+.progress2 {
+    position: relative;
+    width: 210px;
+    height: 30px;
+    background: #9cbab4;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+}
+
+.progress__fill2 {
+    width: 0%;
+    height: 100%;
+    background: #00C6AB;
+    transition: all 0.2s;
+}
+
+.progress__text2 {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font: bold 14px 'Quicksand', sans-serif;
+    color: #ffffff;
+}
+
+.card3 {
+    flex: 1;
+    max-width: 300px; 
+    height: 500px; 
+    padding: 20px; 
+    margin: 10px; 
+    background-color: rgb(231, 226, 226); 
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card3.card-with-image3 {
+    position: relative;
+    height: 550px; 
+    width: 400px; 
+    border: solid rgb(255, 255, 255)
+}
+
+.card-image-container3 {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 50px;
+    height: 100px;
+    transform: scale(2);
+    color: #E95929;
+}
+
+.card-content3 {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    line-height: 1em;
+    color: #666;
+    text-align: center;
+}
+
+.card3 h2 {
+    color: #333; 
+}
+
+.card3 p {
+    margin-top: 5%;
+    width: 80%;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border-radius: 50px;
+}
+
+.card4 {
+    flex: 1;
+    max-width: 300px; 
+    height: 500px; 
+    padding: 20px; 
+    margin: 10px; 
+    background-color: rgb(231, 226, 226); 
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.card4.card-with-image4 {
+    position: relative;
+    height: 550px; 
+    width: 400px; 
+    border: solid rgb(255, 255, 255);
+}
+
+.card-image-container4 {
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 50px;
+    height: 100px;
+    transform: scale(2);
+    color: #E95929;
+}
+
+.card-content4 {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    line-height: 1em;
+    color: #666;
+    text-align: center;
+}
+
+.card-image-container4 img {
+    width: 40px;
+    height: 50px;
+    object-fit: cover;
+    border: 2px solid #ffffff; 
+}
+
+.card4 h2 {
+    color: #333; 
+}
+
+.card4 p {
+    margin-top: 5%;
+    width: 80%;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+    border-radius: 50px;
+}

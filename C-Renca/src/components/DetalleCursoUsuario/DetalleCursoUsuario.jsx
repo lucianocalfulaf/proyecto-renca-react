@@ -1,14 +1,14 @@
 import './DetalleCursoUsuario.scss';
-import Header from '../Navbar/Header';
+import HeaderUser from '../NavbarUsuario/HeaderUser';
 import MainContentB from './sub-components/MainContent/MainContentB';
 import Footer from '../Footer/Footer';
 
 const DetalleCursoUsuario = () => {
     return (
         <div className="grid-container">
-            <Header />
+            <HeaderUser logged={true}/>
             <MainContentB />
-            <Footer />
+            <Footer location={'Usuario'}/>
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import './Nav.scss';
+import { Link } from 'react-router-dom';
 
 const Nav = ({ toggleBuscador }) => {
     return (    
@@ -9,22 +10,24 @@ const Nav = ({ toggleBuscador }) => {
 
                     <li className="navbar__item">
                         <a href="#" className="navbar__link">
-                            <span>Perfiles</span> 
+                            <Link to="/alumnos-admin" className="navbar__link">
+                                <span>Perfiles</span> 
+                            </Link>
                         </a>
                     </li>
                 
                 
                     <li className="navbar__item">
-                        <a href="#" className="navbar__link">
+                        <Link to="/catalogo-cursos" className="navbar__link"><a href="#" className="navbar__link">
                             <span>Cursos</span>
-                        </a>
+                        </a></Link>
                     </li>
                 
                 
                     <li className="navbar__item">
-                        <a href="#" className="navbar__link">
+                        <Link to="/categorias" className="navbar__link"><a href="#" className="navbar__link">
                             <span>Categorías</span>
-                        </a>
+                        </a></Link>
                     </li>
                 </ul>
 

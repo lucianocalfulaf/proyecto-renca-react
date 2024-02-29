@@ -1,0 +1,22 @@
+@import '/src/resets/resets';
+@import '/src/resets/variables';
+
+// Main Content
+.main-cat {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: $seventh-color;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    justify-items: center;
+    grid-template-rows: 1fr 1fr;
+
+    .titulo-cat {
+        color: hsl(172, 41%, 56%);
+        font-family: poppins;
+        margin-top: 3%;
+    }
+}

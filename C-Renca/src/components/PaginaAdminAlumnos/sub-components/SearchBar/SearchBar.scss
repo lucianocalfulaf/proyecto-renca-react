@@ -4,6 +4,15 @@
 .search-container {
     text-align: center;
     font-family: $font-family;
+    width: 100%;
+
+    h1 {
+        color: $quinary-color;
+    }
+}
+
+.table {
+    width: 50vw;
 }
 
 .form-control {
@@ -19,4 +28,9 @@
 
 tbody td {
     cursor: pointer;
+}
+
+.link-alumno {
+    text-decoration: none;
+    color: rgb(32, 22, 22);
 }
