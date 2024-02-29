@@ -55,11 +55,13 @@
 
 .cardA p {
     margin-top: 5%;
+    margin-bottom: 10%;
     width: 100%;
     font-size: 14px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
     border-radius: 50px;
+    color: #666;
 }
 
 .cardA a {
@@ -95,6 +97,7 @@
     border-radius: 5px;
     overflow: hidden;
     margin: 0 auto;
+    margin-bottom: 5%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
 
     .progress__fill {
@@ -147,7 +150,7 @@
     border: solid rgb(255, 255, 255);
 }
 
-.card-image-container2A {
+.card-image-container2A i {
     display: inline-flex; 
     justify-content: center; 
     align-items: center; 
@@ -176,6 +179,7 @@
     width: 80%;
     font-size: 14px;
     background-color: #fff;
+    color: #666;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
     border-radius: 50px;
 }
@@ -188,6 +192,7 @@
     border-radius: 5px;
     overflow: hidden;
     margin: 0 auto;
+    margin-top: 6%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
 
     .progress__fill2 {
@@ -226,7 +231,7 @@
     border: solid rgb(255, 255, 255)
 }
 
-.card-image-container3A {
+.card-image-container3A i {
     display: inline-flex; 
     justify-content: center; 
     align-items: center; 
@@ -255,6 +260,7 @@
     width: 80%;
     font-size: 14px;
     background-color: #fff;
+    color: #666;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
     border-radius: 50px;
 }
@@ -278,7 +284,7 @@
     border: solid rgb(255, 255, 255);
 }
 
-.card-image-container4A {
+.card-image-container4A i {
     display: inline-flex; 
     justify-content: center; 
     align-items: center; 
@@ -314,6 +320,7 @@
     width: 80%;
     font-size: 14px;
     background-color: #fff;
+    color: #666;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
     border-radius: 50px;
 }

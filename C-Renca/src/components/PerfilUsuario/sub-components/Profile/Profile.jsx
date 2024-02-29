@@ -41,7 +41,7 @@ const Profile = () => {
                 </div>
                 <div className="card-content3">
                     <h2><strong>CURSOS<br />APROBADOS</strong></h2><br />
-                    <p><strong>Curso A</strong></p>
+                    <p>Curso A</p>
                 </div>
             </div>   
             <div className="card4 card-with-image4">
@@ -50,7 +50,7 @@ const Profile = () => {
                 </div>
                 <div className="card-content4">
                     <h2><strong>CERTIFICADOS<br />OBTENIDOS</strong></h2><br />
-                    <p><strong>Ciberseguridad</strong></p>
+                    <p>Ciberseguridad</p>
                 </div>
             </div>    
         </div>

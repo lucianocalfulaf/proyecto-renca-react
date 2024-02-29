@@ -13,16 +13,14 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    background-image: url("/opacity-favicon.png"); // Cambiar Logo
-    background-repeat: no-repeat;
-    background-position: left;
+    background-image: url("/opacity-favicon.png"), url("/opacity-favicon.png"); // Cambiar Logo
+    background-repeat:  no-repeat;
+    background-position: center;
     background-size: 30%;
 
     h1 {
-        color: $quinary-color;
-        margin-top: 5%;
-        margin-left: 7.5%;
+        color: $quinary-color;;
+        margin-top: 2%;
         position: absolute;
-        left: 0;
     }
 }

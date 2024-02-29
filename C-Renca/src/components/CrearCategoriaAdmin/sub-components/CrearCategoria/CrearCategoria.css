@@ -55,7 +55,7 @@
     background-color: hsl(172, 41%, 56%);
     width: 280px;
     text-align: left;
-    color: #ffff;
+    color: #fff;
     font-family: poppins;
     border-radius: 10px;
     margin-right: 50px;
@@ -127,10 +127,13 @@
     justify-content: center;
     text-align: left;
     border-radius: 10px;
-    color: #ffff;
     font-family: poppins;
     margin-top: 1%;
     transition: 150ms ease-out;
+}
+
+.buttonUp span {
+    color: #fff;
 }
 
 .buttonUp:hover {

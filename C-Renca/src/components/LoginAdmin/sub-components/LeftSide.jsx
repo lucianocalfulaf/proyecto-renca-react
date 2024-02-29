@@ -5,7 +5,7 @@ function LeftSide() {
       <div className="left-side">
         <form className="ls-form">
           <br />
-          <Link to="/"><img src="/logo-renca.png" alt="admin" className="imagen1" title="volver al inicio"/></Link>
+          <Link to="/home-admin"><img src="/logo-renca.png" alt="admin" className="imagen1" title="volver al inicio"/></Link>
           <br />
           <h3 className="titulo-login-admin">Administrador</h3>
           <br />

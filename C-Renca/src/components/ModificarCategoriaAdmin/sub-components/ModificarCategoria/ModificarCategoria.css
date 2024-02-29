@@ -131,10 +131,13 @@
     justify-content: center;
     text-align: left;
     border-radius: 10px;
-    color: #ffff;
     font-family: poppins;
     margin-top: 1%;
     transition: 150ms ease-out;
+}
+
+.buttonSubir span {
+    color: #fff;
 }
 
 .buttonSubir:hover {

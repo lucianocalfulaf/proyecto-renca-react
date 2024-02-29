@@ -41,7 +41,7 @@ const ProfileA = () => {
                 </div>
                 <div className="card-content3A">
                     <h2><strong>CURSOS<br />APROBADOS</strong></h2><br />
-                    <p><strong>Curso A</strong></p>
+                    <p>Curso A</p>
                 </div>
             </div>   
             <div className="card4A card-with-image4A">
@@ -50,7 +50,7 @@ const ProfileA = () => {
                 </div>
                 <div className="card-content4A">
                     <h2><strong>CERTIFICADOS<br />OBTENIDOS</strong></h2><br />
-                    <p><strong>Ciberseguridad</strong></p>
+                    <p>Ciberseguridad</p>
                 </div>
             </div>    
         </div>
