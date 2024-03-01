@@ -16,3 +16,8 @@
 .selectFile {
     margin-bottom: 20px; 
 }
+
+#file:hover {
+    background-color: #cac2c2;
+}
+

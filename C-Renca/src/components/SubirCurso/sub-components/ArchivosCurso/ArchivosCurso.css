@@ -29,6 +29,13 @@
     border-radius: 5px; 
     cursor: pointer; 
     text-align: center; 
+    transition: 150ms ease-out;
+}
+
+.selectFile label:hover {
+    background-color: #009A88;
+    transform: scale(1.01);
+    transition: 150ms ease-in;
 }
 
 .selectFile input[type="file"] {

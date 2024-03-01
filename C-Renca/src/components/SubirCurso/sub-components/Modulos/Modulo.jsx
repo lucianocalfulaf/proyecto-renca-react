@@ -72,7 +72,7 @@ function AgregarModulo() {
   
     return (
       <div>
-        <button onClick={openPopup}>Agregar módulo</button>
+        <button className="openPopup" onClick={openPopup}>Agregar módulo</button>
         {popupOpened && (
           <div className="popup">
             <div className="popup-content">
@@ -99,9 +99,9 @@ function AgregarModulo() {
                     <br />
                   </div>
                 ))}
-                  <button type="button" onClick={handleAgregarModulo}>Agregar más módulos</button>
+                  <button className="add" type="button" onClick={handleAgregarModulo}>Agregar más módulos</button>
 {/*Enviar la info */}
-                  <button type="submit">Enviar</button>
+                  <button className="send" type="submit">Enviar</button>
                 </div>
               </form>
             </div>

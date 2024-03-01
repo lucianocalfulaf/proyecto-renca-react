@@ -1,6 +1,5 @@
 import './Subtitulos.css';
 
-import React from 'react';
 
 function Subtitulos () {
     return (

@@ -1,3 +1,14 @@
+/* BOtón agragar módulo */
+.openPopup {
+	width: 8vw;
+	height: 3.5vh;
+}
+
+.openPopup:hover {
+    background-color: #cac2c2;
+    transition: 150ms ease-in;
+  }
+
 /* Estilo para el contenedor del popup */
 .popup {
     position: fixed;
@@ -9,7 +20,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     padding: 20px;
-    max-width: 80%;
+    max-width: 85%;
   }
   
   /* Estilo para el contenido del popup */
@@ -43,3 +54,25 @@
     background-color: #0056b3;
   }
 
+#desModulo {
+  margin-left: 36px;
+}
+
+.add {
+  margin-right: 15px;
+  margin-top: 20px;
+}
+
+.add:hover {
+  background-color: #cac2c2;
+  transition: 150ms ease-in;
+}
+
+.send {
+  transition: 150ms ease-out;
+}
+
+.send:hover {
+  transform: scale(1.03);
+  transition: 150ms ease-in;
+}

@@ -4,7 +4,6 @@
     margin: 0 auto;
     padding: 20px;
     background-color: #f7f7f7;
-
   }
   
   .form-group {
@@ -46,6 +45,11 @@
     border: 1px solid #ccc;
     cursor: pointer;
     margin-bottom: 10px;
+  }
+
+  .dropdown-button-categoria:hover {
+    background-color: #cac2c2;
+    transition: 150ms ease-in;
   }
   
   .dropdown-menu-categoria {

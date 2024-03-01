@@ -24,7 +24,7 @@ const Header = () => {
             <header className="header">
 
                 <div className="header__container">
-                    <Link to="/home"><img className="header__logo" src="/logo-renca.png" alt="Logo de Renca" title="Home"/></Link>                
+                    <Link to="/home-admin"><img className="header__logo" src="/logo-renca.png" alt="Logo de Renca" title="Home"/></Link>                
                     <i className="fa-solid fa-right-from-bracket header__logout" title="Logout"></i>
                 </div>
 

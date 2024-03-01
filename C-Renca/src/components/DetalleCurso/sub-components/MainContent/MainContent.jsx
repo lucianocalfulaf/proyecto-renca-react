@@ -7,7 +7,7 @@ import AlumnosEnCurso from '../AlumnosEnCurso/AlumnosEnCurso';
 const MainContent = () => {
     return (
         <main className="main">
-            <h2 className="section-title"><i className="fa-solid fa-chalkboard-user"></i>Curso</h2>
+            <h2 className="section-title-dc"><i className="fa-solid fa-chalkboard-user"></i>Curso</h2>
             <div className="top-row">
                 <InfoGeneral />
                 <BotonesModificar/>

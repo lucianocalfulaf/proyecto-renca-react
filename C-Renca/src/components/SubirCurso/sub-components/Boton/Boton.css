@@ -16,5 +16,7 @@
 
 .custom-button:hover {
     background-color: #769E33; 
+    transform: scale(1.03);
+    transition: 150ms ease-in;
 }
   

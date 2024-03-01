@@ -8,7 +8,7 @@ import Acordeon from '../Acordeon/Acordeon';
 const MainContent = () => {
     return (
         <main className="main">
-            <h2 className="section-title"><i className="fa-solid fa-chalkboard-user"></i>Mi Curso</h2>
+            <h2 className="section-title-acu"><i className="fa-solid fa-chalkboard-user"></i>Mi Curso</h2>
             <div className="top-row-2">
                 <InfoGeneral />
                 <BotonAgregar/>
