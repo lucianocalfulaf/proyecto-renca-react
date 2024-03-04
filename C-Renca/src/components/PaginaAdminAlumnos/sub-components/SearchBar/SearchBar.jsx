@@ -1,8 +1,10 @@
 import './SearchBar.scss';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { ThemeContextUser } from '../../../../context/ThemeContextUser';
 import { Link } from 'react-router-dom';
 
 const Search = () => {
+    const [{adminTheme, adminThemeTwo, adminThemeThree, isDark}, toggleTheme] = useContext(ThemeContextUser); // Dark Mode
 
     // Seteo de estado
     const [ users, setUsers ] = useState([]);
@@ -43,8 +45,8 @@ const Search = () => {
             <table className='table table-striped table-hover mt-5 shadow-lg'>
                 <thead>
                     <tr className='bg-curso text-white'>
-                        <th>Nombre</th>
-                        <th>Nombre de Usuario</th>
+                        <th style={{backgroundColor: toggleTheme ? adminThemeThree.backgroundColor : adminThemeThree.color}}>Nombre</th>
+                        <th style={{backgroundColor: toggleTheme ? adminThemeThree.backgroundColor : adminThemeThree.color}}>Nombre de Usuario</th>
                     </tr>
                 </thead>
                 <tbody>

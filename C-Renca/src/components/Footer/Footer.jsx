@@ -1,6 +1,11 @@
 import './Footer.scss';
+import { useContext } from 'react';
+import { ThemeContextUser } from '../../context/ThemeContextUser';
 
 const Footer = ({ location }) => {
+    const [{theme, isDark}, toggleTheme] = useContext(ThemeContextUser);
+    console.log("theme", theme);
+
     let color;
   
     if (location == 'Usuario' || location == 'Principal') {
@@ -11,7 +16,7 @@ const Footer = ({ location }) => {
     }
     console.log(color);  
       return (
-        <footer className="pie-pagina" style={{ backgroundColor: color}}>
+        <footer className="pie-pagina" style={{backgroundColor: isDark ? theme.backgroundColor : color}}>
           <div className="grupo-a">
             <div className="box-a">
               <figure>

@@ -1,9 +1,11 @@
 import './Header.scss';
 import Nav from './sub-component/Nav';
-import { useState } from 'react'; 
+import { useState, useContext } from 'react'; 
+import { ThemeContextUser } from '../../context/ThemeContextUser';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
+    const [{adminTheme, adminThemeThree, isDark}, toggleTheme] = useContext(ThemeContextUser);
 
     const [buscadorVisible, setBuscadorVisible] = useState(false);
     const [inputValue, setInputValue] = useState('');
@@ -23,16 +25,20 @@ const Header = () => {
         <>
             <header className="header">
 
-                <div className="header__container">
+                <div className="header__container" style={{backgroundColor: isDark ? adminTheme.backgroundColor : adminTheme.backgroundColor}}>
                     <Link to="/home-admin"><img className="header__logo" src="/logo-renca.png" alt="Logo de Renca" title="Home"/></Link>                
-                    <i className="fa-solid fa-right-from-bracket header__logout" title="Logout"></i>
+                    <i 
+                        className='fa-solid fa-right-from-bracket header__logout'
+                        id={isDark ? 'i-dark' : 'i-light'}
+                        title="Logout"
+                    ></i>
                 </div>
 
                 <Nav toggleBuscador={toggleBuscador}/>
 
             </header>            
                
-                <div id="ctn-bars-search" className={buscadorVisible ? "active" : ""}>
+                <div id="ctn-bars-search" className={buscadorVisible ? "active" : ""} style={{backgroundColor: isDark ? adminThemeThree.backgroundColor : adminThemeThree.backgroundColor}}>
                     <input type="text" id="input" placeholder="¿Qué deseas buscar?" value={inputValue} onChange={handleInputChange} />
                 </div>  
                 

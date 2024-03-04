@@ -9,9 +9,15 @@ import Modulos from '/src/components/SubirCurso/sub-components/Modulos/Modulo'
 import Subtitulos from '/src/components/SubirCurso/sub-components/Subtitulos/Subtitulos'
 import Requisito from '../Requisito/Requisito';
 
+// Uso de estados
+import { useContext } from 'react';
+import { ThemeContextUser } from '../../../../context/ThemeContextUser';
+
 const MainContentF = () => {
+    const [{mainTheme, isDark}, toggleTheme] = useContext(ThemeContextUser); // Dark Mode
+
     return (
-        <main className="main-7">
+        <main className="main-7" style={{backgroundColor: toggleTheme ? mainTheme.backgroundColor : mainTheme.color }}>
             <h2 className="section-title-sc" style={{color: '#60BDB1'}}><i className="fa-solid fa-upload"></i>Subir Curso</h2>
             <div className="container">
                 <div className="grupo-1">

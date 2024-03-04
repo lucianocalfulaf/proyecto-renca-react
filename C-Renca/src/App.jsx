@@ -3,6 +3,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import { ThemeProvider } from './context/ThemeContextUser';
 // Ruteo de páginas
 import Home from './components/Home/Home';
 import PaginaAdminAlumnos from './components/PaginaAdminAlumnos/PaginaAdminAlumnos';
@@ -98,7 +99,9 @@ function App() {
 
   return (
     <>
-        <RouterProvider router={router} />
+        <ThemeProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
     </>
   )
 }

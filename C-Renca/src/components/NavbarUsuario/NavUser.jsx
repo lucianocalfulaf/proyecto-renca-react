@@ -1,17 +1,23 @@
 import './navbar-styles/NavUser.scss';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContextUser } from '../../context/ThemeContextUser';
 import InputSearch from './sub-components/InputSearch';
 
 const Nav = ({ displayOne }) => {
+    const [{theme, isDark}, toggleTheme] = useContext(ThemeContextUser);
 
     return (    
         <>      
-            <nav className="navbarUser">
+            <nav className="navbarUser" style={{
+                backgroundColor: theme.backgroundColor,
+                color: theme.color ,
+            }}>
 
                 <ul className="navbarUser__list">
 
                     {/* Explorar Cursos */}
-                    <li className="navbarUser__item--explorar"><a href="#">Explorar Cursos</a></li>
+                    <li className="navbarUser__item--explorar" ><a href="#">Explorar Cursos</a></li>
                     
                     {/* Buscar */}
                     <li className="navbarUser__search">
@@ -21,7 +27,7 @@ const Nav = ({ displayOne }) => {
                         {/* Botón Modo Claro | Modo Oscuro */}
                         <div className="navbarUser__item--icons">                            
                             <a href="#" className="navbarUser__icon">
-                                <i className="fa-solid fa-sun"></i>
+                                <i className="fa-solid fa-sun" onClick={toggleTheme}></i>
                             </a>                            
                         </div>                        
 

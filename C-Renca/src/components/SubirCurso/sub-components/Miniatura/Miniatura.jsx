@@ -22,9 +22,9 @@ function Miniatura() {
       {miniatura && <img src={miniatura} alt="Miniatura" style={{ maxWidth: '100%', height: 'auto' }} />}
       <div className="selectFile">
         <label htmlFor="file">Seleccionar archivo</label>
-        <input type="file" name="files[]" id="file" onChange={handleFileChange} />
+        <input className="files" type="file" name="files[]" id="file" onChange={handleFileChange} />
       </div>
-      </div>
+    </div>
   );
 }
 

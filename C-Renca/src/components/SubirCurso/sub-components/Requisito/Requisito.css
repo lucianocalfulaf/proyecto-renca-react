@@ -11,8 +11,13 @@
     cursor: pointer;
     margin-bottom: 10px;
   }
+
+  .dropdown-button-requisito:hover {
+    background-color: #cac2c2;
+  }
   
   .dropdown-menu-requisito {
+    width: 100%;
     position: absolute;
     top: 100%;
     left: 0;
@@ -22,13 +27,15 @@
     border-radius: 0 0 5px 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    margin-top: -10px;
   }
   
   .dropdown-item-requisito {
     padding: 10px 15px;
     cursor: pointer;
   }
-  
+
   .dropdown-item-requisito:hover {
     background-color: #f1f1f1;
   }
+  

@@ -1,9 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContextUser } from '../../context/ThemeContextUser';
 import './Registro.css';
 import logo from '/favicon.png';
 
 function Registro() {
+  const [{loginTheme, isDark}, toggleTheme] = useContext(ThemeContextUser); // Dark Mode
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -41,7 +45,7 @@ function Registro() {
   return (
     <div className="registro-container">
       <div className="container-fluid">
-        <form className="formulario">
+        <form className="formulario" style={{backgroundColor: loginTheme.backgroundColor, color: loginTheme.color }}>
           <h3 className="titulo">Registrarse</h3>
           <br />
           <Link to="/" className="link" title="Home"><img src={logo} alt="Registrarse Imagen" className="logo" /></Link>

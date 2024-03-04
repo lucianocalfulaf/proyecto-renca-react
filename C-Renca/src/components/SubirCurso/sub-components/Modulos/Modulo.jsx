@@ -86,12 +86,12 @@ function AgregarModulo() {
                   <input type="text" id="nombreModulo" name="nombreModulo" value={formData.nombreModulo} onChange={handleInputChange} />
                   <br />
                   <label htmlFor="desModulo">Descripción:</label>
-                  <input type="text" id="desModulo" name="desModulo" value={formData.desModulo} onChange={handleInputChange} />
+                  <input type="text" name="desModulo" value={formData.desModulo} onChange={handleInputChange} />
                   <br />
 {/*Agregar módulos adicionales */}
                   {modulosAdicionales.map((modulo, index) => (
                       <div key={index}>
-                    <label htmlFor={`nombreModulo${index}`}>{`Módulo ${index + 2}: Nombre del módulo:`}</label>
+                    <label htmlFor={`nombreModulo${index}`}>{`Nombre Módulo ${index + 2}:`}</label>
                     <input type="text" id={`nombreModulo${index}`} name={`nombreModulo${index}`} value={modulo.nombreModulo} onChange={(e) => handleModuloInputChange(index, e)} />
                     <br />
                     <label htmlFor={`desModulo${index}`}>Descripción:</label>

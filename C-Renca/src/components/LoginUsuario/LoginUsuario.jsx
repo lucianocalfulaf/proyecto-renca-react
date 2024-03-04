@@ -1,11 +1,16 @@
 import './LoginUsuario.css';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContextUser } from '../../context/ThemeContextUser';
 
 //LocalStorage implementado, falta probar que funcione
 //Como está enrutado, debería guardarse el login para todas las páginas
 //Por seguridad del usuario, no se almacena la contraseña
 //No debería afectar al JWT 
 function LoginForm() {
+  const [{loginTheme, isDark}, toggleTheme] = useContext(ThemeContextUser); // Dark Mode
+  
+
   const login = () => {
     const name = document.getElementById('email').value;
     const contraseña = document.getElementById('password').value;
@@ -29,7 +34,7 @@ function LoginForm() {
       // Simulación de restablecimiento de contraseña
       alert('Se ha enviado un correo electrónico para restablecer su contraseña');
     };
-  
+
     const register = () => {
       // Simulación de redirección a la página de registro
       alert('Redirigiendo a la página de registro');
@@ -54,7 +59,7 @@ function LoginForm() {
     return (
       <div className="login-bg">
         <div className="container-fluid-2">
-            <form className="formulario-2">
+            <form className="formulario-2" style={{backgroundColor: loginTheme.backgroundColor, color: loginTheme.color }}>
             <h3 className="titulo-login">Iniciar Sesión</h3>
             <br />
             <Link className="link" to="/" title="Home"><img src="\Logo C-Renca.png" alt="Iniciar Sesion Imagen" className="logo-2" /></Link>

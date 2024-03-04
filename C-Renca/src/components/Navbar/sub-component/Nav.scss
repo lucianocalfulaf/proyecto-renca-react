@@ -31,10 +31,28 @@
         padding: $main-padding;
         color: $text-color;
         transition: 150ms ease-out;
-    }     
+    }
 
-    &__link:hover, &__icon i:hover {
+    &__link--light, &__icon--light i {
+        text-decoration: none;
+        padding: $main-padding;
+        color: $text-color;
+        transition: 150ms ease-out;
+    }
+    
+    &__link--dark, &__icon--dark i {
+        text-decoration: none;
+        padding: $main-padding;
+        color: $text-color;
+        transition: 150ms ease-out;
+    }
+
+    &__link--light:hover, &__icon--light i:hover {
         color: $secondary-color;
+    } 
+
+    &__link--dark:hover, &__icon--dark i:hover {
+        color: $quaternary-color;
     } 
 
     // Íconos
@@ -42,16 +60,29 @@
         margin-left: 20px;
     }
 
-    &__icon i {
+    &__icon--light i {
         margin-left: 10px;
     }
 
-    &__icon {
+    &__icon--dark i {
+        margin-left: 10px;
+    }
+
+    &__icon--light {
         text-decoration: none;
         list-style: none;
     }
 
-    &__icon i:hover {
+    &__icon--dark {
+        text-decoration: none;
+        list-style: none;
+    }
+
+    &__icon--light i:hover {
+        transform: $transformation;
+    }
+
+    &__icon--dark i:hover {
         transform: $transformation;
     }
 }

@@ -4,7 +4,7 @@ const ProfileA = () => {
 
     return (
         <div className="card-containerA">
-            <div className="cardA card-with-imageA">
+            <div className="cardA card-with-imageA" >
                 <div className="card-image-containerA">
                     <img src="/testUser2.png" alt="Card 1 Image" />
                 </div>

@@ -45,6 +45,36 @@
         transition: 150ms ease-in;
     }
 
+    #i-light {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        color: white;
+        cursor: pointer;
+        transition: 150ms ease-out;
+        transform: $transformation;
+    }
+
+    #i-light:hover {
+        color: $secondary-color;
+        transform: scale(1.6);
+        transition: 150ms ease-in;
+    }
+
+    #i-dark {
+        grid-column-start: 4;
+        grid-column-end: 5;
+        color: white;
+        cursor: pointer;
+        transition: 150ms ease-out;
+        transform: $transformation;
+    }
+
+    #i-dark:hover {
+        color: $quinary-color;
+        transform: scale(1.6);
+        transition: 150ms ease-in;
+    }
+
     // Logo Renca
     &__logo {
         grid-column-start: 1;

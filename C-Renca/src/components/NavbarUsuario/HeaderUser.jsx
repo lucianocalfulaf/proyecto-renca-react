@@ -2,6 +2,7 @@ import './navbar-styles/HeaderUser.scss';
 import { Link } from 'react-router-dom';
 import NavUser from './NavUser';
 
+
 const HeaderUser = ({ logged }) => {
 
     return (

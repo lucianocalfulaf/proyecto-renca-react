@@ -54,9 +54,17 @@
     background-color: #0056b3;
   }
 
-#desModulo {
-  margin-left: 36px;
+.casilla label {
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
 }
+
+.casilla input {
+  width: 50%;
+  margin-left: 40%;
+}
+
 
 .add {
   margin-right: 15px;
@@ -76,3 +84,4 @@
   transform: scale(1.03);
   transition: 150ms ease-in;
 }
+

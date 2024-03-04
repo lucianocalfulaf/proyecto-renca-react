@@ -1,6 +1,7 @@
 import './BotonAgregar.css'
 
 function BotonAgregar () {
+    
     return (
         <div className="column-3ba">
             <div className="content-container-ba">
