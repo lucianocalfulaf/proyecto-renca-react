@@ -1,87 +1,23 @@
-/* BOtón agragar módulo */
-.openPopup {
-	width: 8vw;
-	height: 3.5vh;
+/* Modulo.css */
+.modulo-container {
+  margin-bottom: 20px;
 }
 
-.openPopup:hover {
-    background-color: #cac2c2;
-    transition: 150ms ease-in;
-  }
-
-/* Estilo para el contenedor del popup */
-.popup {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    max-width: 85%;
-  }
-  
-  /* Estilo para el contenido del popup */
-  .popup-content {
-    text-align: center;
-    margin-bottom: 20px;
-
-  }
-  
-  /* Estilo para el botón de cerrar */
-  .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    font-size: 20px;
-    color: #888;
-  }
-  
-  /* Estilo para el botón de enviar dentro del formulario */
-  .popup button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .popup button[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-
-.casilla label {
-  position: absolute;
-  left: 0;
-  margin-left: 10px;
+.modulo-container label {
+  display: block;
+  margin-bottom: 5px;
 }
 
-.casilla input {
-  width: 50%;
-  margin-left: 40%;
+.modulo-container input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-
-.add {
-  margin-right: 15px;
-  margin-top: 20px;
+.modulo-container input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px #007bff;
 }
-
-.add:hover {
-  background-color: #cac2c2;
-  transition: 150ms ease-in;
-}
-
-.send {
-  transition: 150ms ease-out;
-}
-
-.send:hover {
-  transform: scale(1.03);
-  transition: 150ms ease-in;
-}
-

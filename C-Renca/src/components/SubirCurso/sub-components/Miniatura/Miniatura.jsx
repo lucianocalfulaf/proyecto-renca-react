@@ -2,15 +2,15 @@ import './Miniatura.css';
 import { useState } from 'react';
 
 
-function Miniatura() {
-  const [miniatura, setMiniatura] = useState(null);
+function Imagen() {
+  const [imagen, setImagen] = useState(null);
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setMiniatura(reader.result);
+        setImagen(reader.result);
       };
       reader.readAsDataURL(file);
     }
@@ -19,7 +19,7 @@ function Miniatura() {
   return (
     <div className="seccion-derecha">
       <h2 style={{ fontSize: 'medium', textAlign: 'left' }}>Miniatura</h2>
-      {miniatura && <img src={miniatura} alt="Miniatura" style={{ maxWidth: '100%', height: 'auto' }} />}
+      {imagen && <img src={imagen} alt="Imagen" style={{ maxWidth: '100%', height: 'auto' }} />}
       <div className="selectFile">
         <label htmlFor="file">Seleccionar archivo</label>
         <input className="files" type="file" name="files[]" id="file" onChange={handleFileChange} />
@@ -28,4 +28,4 @@ function Miniatura() {
   );
 }
 
-export default Miniatura;
+export default Imagen;

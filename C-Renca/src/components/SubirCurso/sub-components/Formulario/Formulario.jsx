@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import './Formulario.css'; // Importa el archivo CSS
+import './Formulario.css';
 
-function Formulario() {
-  const [titulo, setTitulo] = useState('');
-  const [descripcion, setDescripcion] = useState('');
-  const [requisitos, setRequisitos] = useState('');
-  const [contenidos, setContenidos] = useState('');
-  const [isOpen, setIsOpen] = useState(false);
+function Formulario({ onChange }) {
+  
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    onChange({ [name]: value });
+  };
+
   const [selectedOption, setSelectedOption] = useState(null);
+
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -16,50 +19,29 @@ function Formulario() {
   const handleOptionClick = (option) => {
     setSelectedOption(option);
     setIsOpen(false);
+    // Llamar a la función de devolución de llamada para enviar el cambio al componente padre
+    onChange({ categoria: option });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Titulo:', titulo);
-    console.log('Descripcion:', descripcion);
-    console.log('Requisitos:', requisitos);
-    console.log('Contenidos:', contenidos);
-  };
-
-  const opcionesDropdown = ['Opción 1', 'Opción 2', 'Opción 3'];
+  const opcionesDropdown = ['Categoría 1', 'Categoría 2', 'Categoría 3'];
 
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="titulo" className="label">Título:</label>
-        <input
-          type="text"
-          id="titulo"
-          value={titulo}
-          onChange={(e) => setTitulo(e.target.value)}
-          className="input"
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="descripcion" className="label">Descripción:</label>
-        <input
-          type="text"
-          id="descripcion"
-          value={descripcion}
-          onChange={(e) => setDescripcion(e.target.value)}
-          className="input"
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="profesor" className="label">Profesor:</label>
-        <input
-          type="text"
-          id="profesor"
-          value={requisitos}
-          onChange={(e) => setRequisitos(e.target.value)}
-          className="input"
-        />
-      </div>
+    <div className="form-group">
+      <label htmlFor="nombreCurso" className="label">Nombre:</label>
+      <input
+        type="text"
+        id="nombreCurso"
+        name="nombreCurso"
+        onChange={handleChange}
+        className="form-control" 
+      />
+      <label htmlFor="descripcion" className="label">Descripción:</label>
+      <input
+        type="text"
+        name="descripcion"
+        onChange={handleChange}
+        className="form-control" 
+      />
       <div className="dropdown-categoria">
         <button onClick={toggleDropdown} className="dropdown-button-categoria">
           {selectedOption ? selectedOption : 'Seleccione categoría'}
@@ -74,9 +56,24 @@ function Formulario() {
           </div>
         )}
       </div>
+      <label htmlFor="profesor" className="label">Profesor:</label>
+      <input
+        type="text"
+        name="profesor"
+        onChange={handleChange}
+        className="form-control" 
+      />
+      <label htmlFor="duracion" className="label">Duración:</label>
+      <input
+        type="number"
+        name="duracion"
+        onChange={handleChange}
+        className="form-control" 
+      />
       
-    </form>
+    </div>
   );
 }
 
 export default Formulario;
+

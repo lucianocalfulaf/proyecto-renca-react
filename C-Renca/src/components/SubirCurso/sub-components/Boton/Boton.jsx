@@ -1,33 +1,69 @@
-import './Boton.css';
 import React, { useState } from 'react';
+import ArchivosCurso from '/src/components/SubirCurso/sub-components/ArchivosCurso/ArchivosCurso';
+import Formulario from '/src/components/SubirCurso/sub-components/Formulario/Formulario';
+import Miniatura from '/src/components/SubirCurso/sub-components/Miniatura/Miniatura';
+import Modulos from '/src/components/SubirCurso/sub-components/Modulos/Modulo';
+import Subtitulos from '/src/components/SubirCurso/sub-components/Subtitulos/Subtitulos';
+import Requisito from '../Requisito/Requisito'; 
 
-function Boton({ guardarArchivosSubidos }) {
-  // Estado para manejar si los campos del formulario están completos o no
-  const [camposCompletos, setCamposCompletos] = useState(false);
+function Boton() {
+    const [formData, setFormData] = useState({
+        ArchivosCurso: {},
+        Miniatura: {},
+        Modulos: {},
+        Subtitulos: {},
+        Requisito: {},
+        Formulario: {},
+    });
 
-  // Función que maneja el clic del botón
-  const handleClick = () => {
-    // Verificar si los campos del formulario están completos
-    if (camposCompletos) {
-      // Simulando archivos subidos (puedes obtenerlos de alguna fuente real)
-      const nuevosArchivos = ['archivo1.pdf', 'archivo2.png', 'archivo3.docx'];
-      // Llamar a la función de guardarArchivosSubidos proporcionada por el componente padre
-      guardarArchivosSubidos(nuevosArchivos);
-      // Mostrar una alerta cuando se haga clic en el botón
-      window.alert('¡Se han guardado los archivos subidos en la lista del formulario!');
-    } else {
-      // Mostrar una alerta indicando que los campos del formulario no están completos
-      window.alert('Porfavor, complete todos los campos');
-    }
-  };
+    const handleFileSelect = (file) => {
+        // Esta función se utiliza para manejar la selección de archivos
+        // y puede ser utilizada en múltiples componentes
+        // Aquí puedes realizar acciones adicionales con el archivo seleccionado
+    };
 
-  return (
-    <div>
-      <button className="custom-button" onClick={handleClick}>
-        Subir curso
-      </button>
-    </div>
-  );
+    const handleArchivosCursoChange = (ArchivosCursoData) => {
+        setFormData({...formData, ArchivosCurso: ArchivosCursoData});
+    };
+
+    const handleMiniaturaChange = (MiniaturaData) => {
+        setFormData({...formData, Miniatura: MiniaturaData});
+    };
+    
+    const handleModulosChange = (ModulosData) => {
+        setFormData({...formData, Modulos: ModulosData});
+    };
+
+    const handleSubtitulosChange = (SubtitulosData) => {
+        setFormData({...formData, Subtitulos: SubtitulosData});
+    };
+
+    const handleFormularioChange = (FormularioData) => {
+        setFormData({...formData, Formulario: FormularioData});
+    };
+
+    const handleRequisitoChange = (RequisitoData) => {
+        setFormData({...formData, Requisito: RequisitoData});
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form Data:", formData);
+    };
+
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <ArchivosCurso onFileSelect={handleFileSelect} onChange={handleArchivosCursoChange} />
+                <Miniatura onFileSelect={handleFileSelect} onChange={handleMiniaturaChange} />
+                <Modulos onChange={handleModulosChange} />
+                <Subtitulos onFileSelect={handleFileSelect} onChange={handleSubtitulosChange} />
+                <Requisito onChange={handleRequisitoChange} />
+                <Formulario onChange={handleFormularioChange} />
+                <button className="custom-button">Subir curso</button>
+            </form>
+        </div>
+    );
 }
 
 export default Boton;

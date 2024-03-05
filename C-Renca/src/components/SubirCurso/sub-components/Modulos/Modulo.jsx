@@ -1,125 +1,66 @@
-import React, { useState, useEffect } from 'react';
+// En AgregarModulo.jsx
+import React, { useState } from 'react';
 import './Modulo.css';
 
-//Es una página pop up
-function AgregarModulo() {
-    const [popupOpened, setPopupOpened] = useState(false);
+function AgregarModulo({ onModulosChange }) {
+    const [numModulos, setNumModulos] = useState(0);
+    const [modulos, setModulos] = useState([]);
 
-    //Guarda la info de cada modulo
-    const [formData, setFormData] = useState({
-      nombreModulo: '',
-      desModulo: ''
-    });
-    //Guarda modulos adicionales, se les ordena por número
-    const [modulosAdicionales, setModulosAdicionales] = useState([]);
-    const [modulosDropDown, setModulosDropDown] = useState([]);
-    const [mostrarModulos, setMostrarModulos] = useState(false);
-  
-    useEffect(() => {
-      // Concatenar los módulos adicionales con el módulo principal para el dropdown
-      const modulos = [formData, ...modulosAdicionales];
-      setModulosDropDown(modulos);
-      // Mostrar el título "Módulos agregados" si hay al menos un módulo
-      setMostrarModulos(modulos.length > 1);
-    }, [formData, modulosAdicionales]);
-  
-    const openPopup = () => {
-      setPopupOpened(true);
+    const handleModuloChange = (event) => {
+        const num = parseInt(event.target.value);
+        if (!isNaN(num) && num >= 0) {
+            setNumModulos(num);
+            setModulos(Array.from({ length: num }, (_, i) => ({ name: '', description: '' })));
+        } else {
+            setNumModulos(0);
+            setModulos([]);
+        }
+        // Llama a la función onModulosChange con los módulos actualizados
+        onModulosChange(modulos);
     };
-  
-    const closePopup = () => {
-      setPopupOpened(false);
+
+    const handleModuleInputChange = (index, type, value) => {
+        const updatedModules = [...modulos];
+        updatedModules[index][type] = value;
+        setModulos(updatedModules);
+        // Llama a la función onModulosChange con los módulos actualizados
+        onModulosChange(updatedModules);
     };
-  
-    //Creo que es para mantener sincronizado los datos del formulario con los cambios
-    const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setFormData({
-        ...formData,
-        [name]: value
-      });
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(modulos);
+        // Handle form submission
     };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      // Combina los datos del módulo principal con los datos de los módulos adicionales
-      const formDataCompleta = {
-        ...formData,
-        modulosAdicionales: modulosAdicionales
-      };
-      // Aquí puedes realizar acciones con los datos combinados, como enviarlos a un servidor, etc.
-      console.log('Formulario enviado:', formDataCompleta);
-      // Limpiar el formulario principal después de enviarlo
-    
-      // Cerrar el popup después de enviar el formulario
-      closePopup();
-      alert('Módulo(s) guardado(s) con éxito');
-    };
-  
-    const handleAgregarModulo = () => {
-      // Agregar un nuevo objeto de módulo a la lista de módulos adicionales
-      setModulosAdicionales([...modulosAdicionales, { nombreModulo: '', desModulo: '' }]);
-    };
-  
-    const handleModuloInputChange = (index, e) => {
-      const { name, value } = e.target;
-      // Actualizar el módulo correspondiente en la lista de módulos adicionales
-      const nuevosModulos = [...modulosAdicionales];
-      nuevosModulos[index] = { ...nuevosModulos[index], [name]: value };
-      setModulosAdicionales(nuevosModulos);
-      console.log("Estado actualizado de los módulos adicionales:", nuevosModulos);
-    };
-  
+
     return (
-      <div>
-        <button className="openPopup" onClick={openPopup}>Agregar módulo</button>
-        {popupOpened && (
-          <div className="popup">
-            <div className="popup-content">
-              <span className="close" onClick={closePopup}>&times;</span>
-              <h2>Módulos del curso</h2>
-              <h4>Agrega cuantos necesites</h4>
-{/*Modulo principal */}
-              <form onSubmit={handleSubmit} id="moduloForm">
-                <div className="casilla">
-                  <label htmlFor="nombreModulo">Nombre módulo:</label>
-                  <input type="text" id="nombreModulo" name="nombreModulo" value={formData.nombreModulo} onChange={handleInputChange} />
-                  <br />
-                  <label htmlFor="desModulo">Descripción:</label>
-                  <input type="text" name="desModulo" value={formData.desModulo} onChange={handleInputChange} />
-                  <br />
-{/*Agregar módulos adicionales */}
-                  {modulosAdicionales.map((modulo, index) => (
-                      <div key={index}>
-                    <label htmlFor={`nombreModulo${index}`}>{`Nombre Módulo ${index + 2}:`}</label>
-                    <input type="text" id={`nombreModulo${index}`} name={`nombreModulo${index}`} value={modulo.nombreModulo} onChange={(e) => handleModuloInputChange(index, e)} />
-                    <br />
-                    <label htmlFor={`desModulo${index}`}>Descripción:</label>
-                    <input type="text" id={`desModulo${index}`} name={`desModulo${index}`} value={modulo.desModulo} onChange={(e) => handleModuloInputChange(index, e)} />
-                    <br />
-                  </div>
-                ))}
-                  <button className="add" type="button" onClick={handleAgregarModulo}>Agregar más módulos</button>
-{/*Enviar la info */}
-                  <button className="send" type="submit">Enviar</button>
+        <div>
+            <form>
+                <div>
+                    <label>Cantidad de módulos</label>
+                    <input type="number" value={numModulos} onChange={handleModuloChange} />
                 </div>
-              </form>
-            </div>
-          </div>
-        )}
-{/*Mostrar la info en la página, fuera del pop up */}
-        {mostrarModulos && (
-          <div>
-            <h2>Módulos agregados</h2>
-            <select>
-              {modulosDropDown.map((modulo, index) => (
-                <option key={index}>{`${index + 1}: ${modulo.nombreModulo}`} - {modulo.desModulo}</option>
-              ))}
-            </select>
-          </div>
-        )}
-      </div>
+                {modulos.map((modulo, index) => (
+                    <div key={index}>
+                        <label>{`Módulo ${index + 1}`}</label>
+                        <input
+                            type="text"
+                            value={modulo.name}
+                            onChange={(e) => handleModuleInputChange(index, 'name', e.target.value)}
+                        />
+                        <label>{`Descripción ${index + 1}`}</label>
+                        <input
+                            type="text"
+                            value={modulo.description}
+                            onChange={(e) => handleModuleInputChange(index, 'description', e.target.value)}
+                        />
+                    </div>
+                ))}
+                <button type="submit" onClick={handleSubmit}>Confirmar módulos</button>
+            </form>
+        </div>
     );
-  }
-  
-  export default AgregarModulo;
+}
+
+export default AgregarModulo;
+

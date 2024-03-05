@@ -4,6 +4,7 @@ import axios from 'axios';
 
 function Formulario() {
   const [nombreCurso, setNombreCurso] = useState('');
+  const [filtro, setFiltro] = useState('');
   const [categoria, setCategoria] = useState('');
   const [profesor, setProfesor] = useState('');
   const [duracion, setDuracion] = useState('');
@@ -33,7 +34,7 @@ function Formulario() {
 
     // Realiza la solicitud POST para cargar la imagen
     try {
-      const response = await axios.post("http://localhost:4000/upload", formData, {
+      const response = await axios.post("http://localhost:4000/cursos", formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -43,6 +44,7 @@ function Formulario() {
       // Datos del curso junto con la URL de la imagen
       const cursoData = {
         nombreCurso: nombreCurso,
+        filtro: filtro,
         categoria: categoria,
         profesor: profesor,
         duracion: duracion,
@@ -58,6 +60,7 @@ function Formulario() {
 
       // Limpiar los campos del formulario después de enviar el curso
       setNombreCurso('');
+      setFiltro('');
       setCategoria('');
       setProfesor('');
       setDuracion('');
@@ -89,6 +92,10 @@ function Formulario() {
         <label className="label">
           Nombre del Curso:
           <input type="text" className='input' value={nombreCurso} onChange={(e) => setNombreCurso(e.target.value)} />
+        </label>
+        <label className="label">
+          Filtro:
+          <input type="text" className='input' value={filtro} onChange={(e) => setFiltro(e.target.value)} />
         </label>
         <label>
           Categoría:
@@ -123,7 +130,7 @@ function Formulario() {
           className="input"
         />
       </div>
-      <div className="dropdown">
+    {/*}  <div className="dropdown">
         <button onClick={toggleDropdown} className="dropdown-button">
           {selectedOption ? selectedOption : 'Seleccione categoría'}
         </button>
@@ -136,7 +143,7 @@ function Formulario() {
             ))}
           </div>
         )}
-      </div>
+      </div>*/}
       <div className="form-group">
         <label htmlFor="contenidos" className="label">Contenido del curso:</label>
         <textarea
