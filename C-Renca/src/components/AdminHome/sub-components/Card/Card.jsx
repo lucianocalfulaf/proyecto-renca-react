@@ -8,11 +8,10 @@ const Card = () => {
                     <img src="/testUser2.png" alt="Card 1 Image" />
                 </div>
                 <div className="card-contentHA">
+                    <i className="fa-solid fa-user-tie"></i>
                     <h2>Nombre Admin</h2>
                     <p>Cargo</p>      
                     <a>CORREO ELECTRONICO</a><br />
-                    <a>DIRECCION</a><br />
-                    <a>RED SOCIAL</a><br />
                     <button className="modificar-datosHA">Modificar Datos</button>
                 </div>
             </div>
