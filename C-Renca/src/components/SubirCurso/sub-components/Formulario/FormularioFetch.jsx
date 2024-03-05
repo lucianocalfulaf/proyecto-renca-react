@@ -13,50 +13,35 @@ function Formulario() {
   const [contenidos, setContenidos] = useState('');
   const [imagen, setImagen] = useState(null); // Estado para almacenar la imagen seleccionada
 
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleOptionClick = (option) => {
-    setSelectedOption(option);
-    setIsOpen(false);
-  };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Crear un objeto FormData para enviar la imagen
+    // Verifica si hay una imagen seleccionada
+    if (!imagen) {
+      console.error('Debe seleccionar una imagen');
+      return;
+    }
+
+    // Crear un objeto FormData para enviar la imagen y los datos del curso
     const formData = new FormData();
     formData.append('imagen', imagen);
+    formData.append('nombreCurso', nombreCurso);
+    formData.append('filtro', filtro);
+    formData.append('categoria', categoria);
+    formData.append('profesor', profesor);
+    formData.append('duracion', duracion);
+    formData.append('descripcion', descripcion);
+    formData.append('requisitos', requisitos);
+    formData.append('contenidos', contenidos);
 
-    // Realiza la solicitud POST para cargar la imagen
+    // Realiza la solicitud POST para cargar la imagen y crear el curso
     try {
       const response = await axios.post("http://localhost:4000/cursos", formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
       });
-      const imagenUrl = response.data.url; // URL de la imagen cargada
-
-      // Datos del curso junto con la URL de la imagen
-      const cursoData = {
-        nombreCurso: nombreCurso,
-        filtro: filtro,
-        categoria: categoria,
-        profesor: profesor,
-        duracion: duracion,
-        descripcion: descripcion,
-        requisitos: requisitos,
-        contenidos: contenidos,
-        imagen: imagenUrl // Agrega la URL de la imagen al objeto de datos del curso
-      };
-
-      // Realiza la solicitud POST para crear el curso
-      const cursoResponse = await axios.post("http://localhost:4000/cursos", cursoData);
-      console.log('Curso creado:', cursoResponse.data);
+      console.log('Curso creado:', response.data);
 
       // Limpiar los campos del formulario después de enviar el curso
       setNombreCurso('');
@@ -68,13 +53,10 @@ function Formulario() {
       setRequisitos('');
       setContenidos('');
       setImagen(null); // Reinicia el estado de la imagen
-      setSelectedOption(null); // Reinicia el estado de la opción seleccionada del dropdown
     } catch (error) {
       console.error('Hubo un problema al enviar el curso:', error);
     }
   };
-
-  const opcionesDropdown = ['Opción 1', 'Opción 2', 'Opción 3'];
 
   // Función para manejar la selección de la imagen
   const handleImageChange = (event) => {
@@ -84,87 +66,70 @@ function Formulario() {
 
   return (
     <div className="container-fluid">
-    <form className="form-container" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <div className='row'>
-
+      <form className="form-container" onSubmit={handleSubmit}>
+        <div className="form-group">
+          <label className="label">
+            Nombre del Curso:
+            <input type="text" className='input' value={nombreCurso} onChange={(e) => setNombreCurso(e.target.value)} />
+          </label>
+          <label className="label">
+            Filtro:
+            <input type="text" className='input' value={filtro} onChange={(e) => setFiltro(e.target.value)} />
+          </label>
+          <label>
+            Categoría:
+            <input type="text" className='input' value={categoria} onChange={(e) => setCategoria(e.target.value)} />
+          </label>
+          <label>
+            Profesor:
+            <input type="text" className='input' value={profesor} onChange={(e) => setProfesor(e.target.value)} />
+          </label>
+          <label>
+            Duración:
+            <input type="number" className='input' value={duracion} onChange={(e) => setDuracion(e.target.value)} />
+          </label>
         </div>
-        <label className="label">
-          Nombre del Curso:
-          <input type="text" className='input' value={nombreCurso} onChange={(e) => setNombreCurso(e.target.value)} />
-        </label>
-        <label className="label">
-          Filtro:
-          <input type="text" className='input' value={filtro} onChange={(e) => setFiltro(e.target.value)} />
-        </label>
-        <label>
-          Categoría:
-          <input type="text" className='input' value={categoria} onChange={(e) => setCategoria(e.target.value)} />
-        </label>
-        <label>
-          Profesor:
-          <input type="text" className='input' value={profesor} onChange={(e) => setProfesor(e.target.value)} />
-        </label>
-        <label>
-          Duración:
-          <input type="text" className='input' value={duracion} onChange={(e) => setDuracion(e.target.value)} />
-        </label>
-      </div>
-      <div className="form-group">
-        <label htmlFor="descripcion" className="label">Descripción:</label>
-        <input
-          type="text"
-          id="descripcion"
-          value={descripcion}
-          onChange={(e) => setDescripcion(e.target.value)}
-          className="input"
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="requisitos" className="label">Requisitos:</label>
-        <input
-          type="text"
-          id="requisitos"
-          value={requisitos}
-          onChange={(e) => setRequisitos(e.target.value)}
-          className="input"
-        />
-      </div>
-    {/*}  <div className="dropdown">
-        <button onClick={toggleDropdown} className="dropdown-button">
-          {selectedOption ? selectedOption : 'Seleccione categoría'}
-        </button>
-        {isOpen && (
-          <div className="dropdown-menu">
-            {opcionesDropdown.map((option, index) => (
-              <div key={index} className="dropdown-item" onClick={() => handleOptionClick(option)}>
-                {option}
-              </div>
-            ))}
-          </div>
-        )}
-      </div>*/}
-      <div className="form-group">
-        <label htmlFor="contenidos" className="label">Contenido del curso:</label>
-        <textarea
-          id="contenidos"
-          value={contenidos}
-          onChange={(e) => setContenidos(e.target.value)}
-          className="textarea"
-        />
-      </div>
-      <div className="form-group">
-        <label htmlFor="imagen" className="label">Imagen del curso:</label>
-        <input
-          type="file"
-          id="imagen"
-          accept="image/*" // Solo permite cargar archivos de imagen
-          onChange={handleImageChange}
-          className="input"
-        />
-      </div>
-      <button type="submit">Enviar</button>
-    </form>
+        <div className="form-group">
+          <label htmlFor="descripcion" className="label">Descripción:</label>
+          <input
+            type="text"
+            id="descripcion"
+            value={descripcion}
+            onChange={(e) => setDescripcion(e.target.value)}
+            className="input"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="requisitos" className="label">Requisitos:</label>
+          <input
+            type="text"
+            id="requisitos"
+            value={requisitos}
+            onChange={(e) => setRequisitos(e.target.value)}
+            className="input"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="contenidos" className="label">Contenido del curso:</label>
+          <textarea
+            id="contenidos"
+            value={contenidos}
+            onChange={(e) => setContenidos(e.target.value)}
+            className="textarea"
+          />
+        </div>
+        <div className="form-group">
+          <label htmlFor="imagen" className="label">Imagen del curso:</label>
+          <input
+            type="file"
+            id="imagen"
+            accept="image/*" // Solo permite cargar archivos de imagen
+            onChange={handleImageChange}
+            className="input"
+          />
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
     </div>
   );
 }
