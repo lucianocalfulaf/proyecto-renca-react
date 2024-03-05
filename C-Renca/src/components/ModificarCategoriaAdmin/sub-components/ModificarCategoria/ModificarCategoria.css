@@ -18,18 +18,12 @@
 }
 
 /* Contenedor Formulario */
-/* .tituloFormularioSubida2 {
-    font-family: poppins;
-} */
-  
 .contenedorFormulario {
     margin-top: -100px;
     margin-bottom: 50px;
     width: 90vw;
-    height: 70vh;
     background-color: rgb(222, 219, 219);
     border-radius: 10px;
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
@@ -40,9 +34,9 @@
     flex: 1.5;
     display: flex;
     flex-direction: column;
-    margin-top: 15%;
-    width: 100%;
-    margin-left: 14%;
+    margin-top: 10%;
+
+    margin-left: 5%;
 }
 
 .textoFormulario {
@@ -50,7 +44,7 @@
     font-family: poppins;
 } 
 
-.tablaFormulario{
+.tablaFormulario {
     margin-right: 200px;
     margin-top: -100px;
 }
@@ -71,7 +65,7 @@
 }
 
 .buttonFormulario:hover {
-   background-color: #F59F30;
+    background-color: #F59F30;
 }
 
 .selectButtonFormulario {
@@ -108,7 +102,6 @@
     font-family: poppins;
 }
 
-
 /* Contenedor Modificar Cambios */
 .PrevisualizacionFormulario { 
     flex-direction: column;
@@ -118,36 +111,8 @@
     margin-top: 10%;
 }
 
-.PrevisualizacionFormulario h3 {
-	margin-top: 2%;
-}
-
-.buttonSubir {
-    background-color: hsl(172, 41%, 56%);
-    width: 20%;
-    height: 5%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    border-radius: 10px;
-    font-family: poppins;
-    margin-top: 1%;
-    transition: 150ms ease-out;
-}
-
-.buttonSubir span {
-    color: #fff;
-}
-
-.buttonSubir:hover {
-	background-color: #C8D300;
-    transform: scale(1.1);
-    transition: 150ms ease-in;
-}
-
+.buttonSubir,
 .buttonEliminar {
-    background-color: rgb(255, 98, 0);
     width: 20%;
     height: 5%;
     display: grid;
@@ -157,21 +122,62 @@
     border-radius: 10px;
     color: #ffff;
     font-family: poppins;
-    margin-top: 3%;
     transition: 150ms ease-out;
 }
 
+.buttonSubir:hover,
 .buttonEliminar:hover {
-	background-color: #af0e02;
-    transform: scale(1.1);
     transition: 150ms ease-in;
 }
 
+.buttonSubir {
+    background-color: hsl(172, 41%, 56%);
+    margin-top: 1%;
+}
+
+.buttonSubir:hover {
+    background-color: #C8D300;
+    transform: scale(1.1);
+}
+
+.buttonEliminar {
+    background-color: rgb(255, 98, 0);
+    margin-top: 3%;
+}
+
+.buttonEliminar:hover {
+    background-color: #af0e02;
+    transform: scale(1.1);
+}
+
 /* CSS para Miniatura */
-.contenedorImagen{
-	width: 160px;
+.contenedorImagen {
+    width: 160px;
     height: 160px;
     margin-top: 5%;
     border: 3px solid #60BDB1;
     background-color: rgb(232, 230, 230);
 }  
+
+/* Estilos para Cursos Disponibles */
+.cursosDisponibles {
+    overflow-x: auto; /* Permitir el desplazamiento horizontal */
+    white-space: nowrap; /* No permitir que las cards se envuelvan a la siguiente línea */
+}
+
+.cardsContainer {
+    display: flex;
+    flex-wrap: nowrap; /* Impedir que las tarjetas se envuelvan a la siguiente línea */
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 10px;
+    width: calc(33.33% - 20px); /* Ancho calculado para tres tarjetas por fila */
+    min-width: 250px; /* Ancho mínimo de la tarjeta */
+    overflow: hidden; /* Ocultar el texto que exceda el tamaño de la tarjeta */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos cuando el texto se trunque */
+}
+

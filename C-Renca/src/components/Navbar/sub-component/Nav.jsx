@@ -36,7 +36,7 @@ const Nav = ({ toggleBuscador }) => {
                 
                     <li className="navbar__item">
                         <a href="#" className="navbar__link">
-                            <Link to="/categorias"
+                            <Link to="/ver-categoria-admin"
                                 className={isDark ? 'navbar__link--dark' : 'navbar__link--light'}
                             >
                                 <span>Categorías</span>
