@@ -140,7 +140,7 @@ return (
                 <input
                   className="form"
                   placeholder="Contraseña:"
-                  type="contrasena"
+                  type="password"
                   id="contrasena"
                   name="contrasena"
                   value={contrasena}
