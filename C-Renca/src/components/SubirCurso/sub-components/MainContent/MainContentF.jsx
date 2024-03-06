@@ -1,7 +1,7 @@
 import './MainContentF.scss';
-import React, { useState } from 'react';
-import axios from 'axios'; // Importa axios para realizar la solicitud POST
-
+//import React, { useState } from 'react';
+//import axios from 'axios'; // Importa axios para realizar la solicitud POST
+import FormularioFetch from '/src/components/SubirCurso/sub-components/Formulario/FormularioFetch'; 
 //importación de componentes
 import ArchivosCurso from '/src/components/SubirCurso/sub-components/ArchivosCurso/ArchivosCurso';
 import Formulario from '/src/components/SubirCurso/sub-components/Formulario/Formulario';
@@ -11,7 +11,7 @@ import Subtitulos from '/src/components/SubirCurso/sub-components/Subtitulos/Sub
 import Requisito from '../Requisito/Requisito';
 
 function MainContentF() {
-    const [formData, setFormData] = useState({
+   {/*} const [formData, setFormData] = useState({
         ArchivosCurso: {},
         Imagen: {},
         Modulos: [],
@@ -65,12 +65,13 @@ function MainContentF() {
                 console.error('Error al enviar el formulario:', error);
                 // Puedes manejar errores aquí
             });
-    };
+    };*/}
 
     return (
         <main className="main-7">
             <h2 className="section-title-sc"><i className="fa-solid fa-upload"></i>Subir Curso</h2>
-            <div className="container">
+            <FormularioFetch />
+         {/*}   <div className="container">
                 <div className="grupo-1">
                     <ArchivosCurso onFileSelect={handleFileSelect} onChange={handleArchivosCursoChange} />
                     <div className="box-2">
@@ -86,7 +87,7 @@ function MainContentF() {
                         </div>
                     </div>
                 </div>
-            </div>
+    </div>*/}
         </main>
     );
 }

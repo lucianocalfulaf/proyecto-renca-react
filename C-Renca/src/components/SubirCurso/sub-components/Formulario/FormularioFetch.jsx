@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import './Formulario.css'; // Importa el archivo CSS
 import axios from 'axios';
+import './FormularioFetch.css'; 
 
 function Formulario() {
   const [nombreCurso, setNombreCurso] = useState('');
@@ -66,59 +66,59 @@ function Formulario() {
 
   return (
     <div className="container-fluid">
-      <form className="form-container" onSubmit={handleSubmit}>
-        <div className="form-group">
+      <form className="form-container-A" onSubmit={handleSubmit}>
+        <div className="form-group-1">
           <label className="label">
             Nombre del Curso:
             <input type="text" className='input' value={nombreCurso} onChange={(e) => setNombreCurso(e.target.value)} />
           </label>
           <label className="label">
-            Filtro:
-            <input type="text" className='input' value={filtro} onChange={(e) => setFiltro(e.target.value)} />
-          </label>
-          <label>
-            Categoría:
-            <input type="text" className='input' value={categoria} onChange={(e) => setCategoria(e.target.value)} />
+            Filtro :
+            <input type="text" className='input' placeholder="Dentro de qué categoría de cursos será parte" value={filtro} onChange={(e) => setFiltro(e.target.value)} />
           </label>
           <label>
             Profesor:
             <input type="text" className='input' value={profesor} onChange={(e) => setProfesor(e.target.value)} />
           </label>
           <label>
-            Duración:
-            <input type="number" className='input' value={duracion} onChange={(e) => setDuracion(e.target.value)} />
+            Duración :
+            <input type="number" className='input' placeholder="Horas" value={duracion} onChange={(e) => setDuracion(e.target.value)} />
           </label>
         </div>
-        <div className="form-group">
-          <label htmlFor="descripcion" className="label">Descripción:</label>
+        <div className="form-group-2">
+          <label htmlFor="descripcion" className="label">Descripción :</label>
           <input
             type="text"
             id="descripcion"
+            placeholder="Breve descripción del curso en general"
             value={descripcion}
             onChange={(e) => setDescripcion(e.target.value)}
             className="input"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="requisitos" className="label">Requisitos:</label>
+        <div className="form-group-3">
+          <label htmlFor="requisitos" className="label">Requisitos :</label>
           <input
             type="text"
             id="requisitos"
+            placeholder="Para realizar el curso el alumno debe cumplir con estos requisitos"
             value={requisitos}
             onChange={(e) => setRequisitos(e.target.value)}
             className="input"
           />
         </div>
-        <div className="form-group">
-          <label htmlFor="contenidos" className="label">Contenido del curso:</label>
+        <div className="form-group-4">
+        {/*}  <label htmlFor="contenidos" className="label">Contenidos :</label>
           <textarea
             id="contenidos"
+            placeholder="No encuentro necesario este campo, es como la descripción"
             value={contenidos}
             onChange={(e) => setContenidos(e.target.value)}
             className="textarea"
-          />
+  />*/}
         </div>
-        <div className="form-group">
+        <div className="form-group-5">
+          <i className="fa fa-cloud-upload custom-icon"></i>
           <label htmlFor="imagen" className="label">Imagen del curso:</label>
           <input
             type="file"
@@ -128,7 +128,7 @@ function Formulario() {
             className="input"
           />
         </div>
-        <button type="submit">Enviar</button>
+        <button type="submit" id="botonForm">Enviar</button>
       </form>
     </div>
   );
