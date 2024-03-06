@@ -36,13 +36,12 @@ function LoginForm() {
 
         // Redireccionar a la página principal de usuario, a definir
         window.location.href = '/perfil-usuario';
-      } else {
-        alert('Credenciales incorrectas');
+        } else {
+          alert('Credenciales incorrectas');
+        }
+      });
     }
-    });
-     
   }
-}
 
 
 
