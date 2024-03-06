@@ -1,6 +1,6 @@
 import './LoginUsuario.css';
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { ThemeContextUser } from '../../context/ThemeContextUser';
 
 //LocalStorage implementado, falta probar que funcione
@@ -9,24 +9,39 @@ import { ThemeContextUser } from '../../context/ThemeContextUser';
 //No debería afectar al JWT 
 function LoginForm() {
   const [{loginTheme, isDark}, toggleTheme] = useContext(ThemeContextUser); // Dark Mode
+  const [ users, setUsers ] = useState([]);
   
+  const url = 'http://localhost:4000/usuarios';
+    const getUsers = async () => {
+        const res = await fetch(url);
+        const data = await res.json();
+        setUsers(data);
+  }
+
+   // useEffect
+   useEffect(() => {
+    getUsers();
+}, []);
 
   const login = () => {
-    const name = document.getElementById('email').value;
+    const email = document.getElementById('email').value;
     const contraseña = document.getElementById('password').value;
-      
-    // Aquí deberías verificar las credenciales en el servidor
-    if (name === 'name' && contraseña === 'contraseña') {
-      // Iniciar sesión y almacenar el ID del usuario en el almacenamiento local
-      localStorage.setItem('userID', name); // Almacena el email como ID del usuario
-      alert('Inicio de sesión exitoso');
 
-      // Redireccionar a la página principal de usuario, a definir
-      window.location.href = '/CatalogoCursos';
-    } else {
-      alert('Credenciales incorrectas');
+    {users.map((user) => {
+       // Aquí deberías verificar las credenciales en el servidor
+       if (email === user.correo && contraseña === user.contrasena) {
+        // Iniciar sesión y almacenar el ID del usuario en el almacenamiento local
+        localStorage.setItem('userID', email); // Almacena el email como ID del usuario
+        alert('Inicio de sesión exitoso');
+
+        // Redireccionar a la página principal de usuario, a definir
+        window.location.href = '/perfil-usuario';
+        } else {
+          alert('Credenciales incorrectas');
+        }
+      });
     }
-  }; 
+  }
 
 
 
@@ -68,7 +83,7 @@ function LoginForm() {
                 <tbody>
                 <tr>
                     <td>
-                    <input className="form-2" placeholder="Nombre usuario:" type="text" id="name" name="name" required />
+                    <input className="form-2" placeholder="Correo:" type="text" id="email" name="email" required />
                     </td>
                 </tr>
                 <tr>
@@ -96,5 +111,5 @@ function LoginForm() {
       </div>
     );
   }
-  
-  export default LoginForm;
+
+export default LoginForm;
