@@ -135,8 +135,21 @@ return (
                 />
               </td>
             </tr>
+
             <tr>
-            <td>
+              <td>
+                <input
+                  className="form"
+                  placeholder="Fecha de Nacimiento:"
+                  type="date"
+                  id="fechaNacimiento"
+                  name="fechaNacimiento"
+                  value={fechaNacimiento}
+                  onChange={(e) => setFechaNacimiento(e.target.value)}
+                  required
+                />
+              </td>
+              <td className='contraseña'>
                 <input
                   className="form"
                   placeholder="Contraseña:"
@@ -155,24 +168,8 @@ return (
                 </div>
               </td>
             </tr>
-            <tr>
 
-            </tr>
-            <tr>
-            <td>
-                <input
-                  className="form"
-                  placeholder="Fecha de Nacimiento:"
-                  type="date"
-                  id="fechaNacimiento"
-                  name="fechaNacimiento"
-                  value={fechaNacimiento}
-                  onChange={(e) => setFechaNacimiento(e.target.value)}
-                  required
-                />
-              </td>
-
-            </tr>
+           
             <tr>
               <td colSpan="2">
                 <label htmlFor="fileInput">Subir RSH y Certificado de Estudios:</label>
