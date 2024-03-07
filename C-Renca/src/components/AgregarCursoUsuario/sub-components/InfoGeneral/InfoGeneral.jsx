@@ -32,7 +32,7 @@ function InfoGeneral ({ courseId }) {
     return (
         <div className="info-general-container">
             <div className="column-1">
-                <img src={imagen} alt="Curso" />
+                <img src="/img-1.jpg" alt="Curso" />
             </div>
             <div className="column-2">
                 <h2><strong>{nombreCurso}</strong></h2>

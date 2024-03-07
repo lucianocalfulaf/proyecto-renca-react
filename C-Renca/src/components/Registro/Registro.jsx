@@ -32,7 +32,7 @@ function Registro() {
 
       axios.post ("http://localhost:4000/usuarios", registroData)
       .then(response => {
-          console.log("Usuario registrado: ",response.data);
+          console.log("Usuario registrado: ", response.data);
 
           // Guardar los datos del usuario en localStorage
           //localStorage.setItem('usuario', JSON.stringify(registroData));
@@ -47,6 +47,7 @@ function Registro() {
 
           // Redirigir al perfil del usuario
           //history.push('/perfil');
+          // window.location.href = '/login';
       })
       .catch(error => {
           console.error("Error al registrar usuario: ",error);
@@ -177,11 +178,9 @@ return (
           </tbody>
         </table>
         <br />
-        <Link to="/perfil" >
-        <button type="submit" className="botonRegister">
+        <button type="submit" className="botonRegister" onClick={Registro}>
           Registrarse
         </button>
-        </Link>
         <br />
         <a className="text" href="#" onClick={() => console.log('Ir a login')}>
           ¿Ya tiene una cuenta? Ingrese
