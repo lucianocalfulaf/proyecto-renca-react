@@ -2,46 +2,47 @@ import './SearchBar.scss';
 import { useState, useEffect, useContext } from 'react';
 import { ThemeContextUser } from '../../../../context/ThemeContextUser';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Search = () => {
     const [{adminTheme, adminThemeTwo, adminThemeThree, isDark}, toggleTheme] = useContext(ThemeContextUser); // Dark Mode
 
     // Seteo de estado
-    const [ users, setUsers ] = useState([]);
-    const [ search, setSearch ] = useState('');
+    const [usuarios, setUsuarios] = useState([]);
+    const [search, setSearch] = useState('');
 
-    // Consumir ApI
-    const url = 'https://jsonplaceholder.typicode.com/users';
-    const showUsers = async () => {
-        const res = await fetch(url);
-        const data = await res.json();
-        setUsers(data);
-    }
+    // Consumir API
+    useEffect(() => {
+        const fetchUsers = async () => {
+            try {
+                const response = await axios.get('http://localhost:4000/usuarios');
+                setUsuarios(response.data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        fetchUsers();
+    }, []);
 
     // Función de búsqueda
     const searcher = (e) => {
         setSearch(e.target.value);
-        console.log(e.target.value);
     }
 
     // Filtrado Ternario
-    const result = !search ? users : users.filter((unit) => unit.name.toLowerCase().includes(search.toLocaleLowerCase()));
+    const result = !search ? usuarios : usuarios.filter((usuario) => usuario.nombre.toLowerCase().includes(search.toLowerCase()));
 
-    // useEffect
-    useEffect(() => {
-        showUsers();
-    }, []);
+    // Función para guardar el usuario seleccionado en localStorage
+    const guardarUsuarioLocalStorage = (usuario) => {
+        localStorage.setItem('usuarioSeleccionado', JSON.stringify(usuario));
+        console.log('Usuario guardado en localStorage: ', usuario);
+    }
 
     return (
         <div className="search-container">
-            
             <br />
-
             <h1>Alumnos C-Renca</h1>
-            {/* Input */}
             <input value={search} onChange={searcher} type="text" placeholder="Buscar Alumno..." className="form-control" />
-
-            {/* Tabla */}
             <table className='table table-striped table-hover mt-5 shadow-lg'>
                 <thead>
                     <tr className='bg-curso text-white'>
@@ -50,10 +51,18 @@ const Search = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    { result.map( (user) => (
-                        <tr key={user.id}>
-                            <td><Link to="/perfil-alumno" className='link-alumno'>{user.name}</Link></td>
-                            <td><Link to="/perfil-alumno" className='link-alumno'>{user.username}</Link></td>
+                    {result.map((usuario) => (
+                        <tr key={usuario._id} onClick={() => guardarUsuarioLocalStorage(usuario)}>
+                            <td>
+                                <Link to="/perfil-alumno" className='link-alumno'>
+                                    {usuario.nombre} {usuario.apellido}
+                                </Link>
+                            </td>
+                            <td>
+                                <Link to="/perfil-alumno" className='link-alumno'>
+                                    {usuario.correo}
+                                </Link>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

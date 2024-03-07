@@ -1,27 +1,41 @@
+import React, { useState, useEffect } from 'react';
 import './ProfileA.scss';
 
 const ProfileA = () => {
+    // Estado para almacenar la información del usuario
+    const [userInfo, setUserInfo] = useState(null);
+
+    useEffect(() => {
+        // Obtener la información del usuario guardada en localStorage
+        const storedUserInfo = localStorage.getItem('usuarioSeleccionado');
+        if (storedUserInfo) {
+            // Si se encuentra la información del usuario, analízala y actualiza el estado
+            const parsedUserInfo = JSON.parse(storedUserInfo);
+            setUserInfo(parsedUserInfo);
+        }
+    }, []);
 
     return (
         <div className="card-containerA">
-            <div className="cardA card-with-imageA" >
-                <div className="card-image-containerA">
-                    <img src="/testUser2.png" alt="Card 1 Image" />
+                {userInfo && (
+                <div className="cardA card-with-imageA" >
+                    <div className="card-image-containerA">
+                        <img src={userInfo.imagen.url} alt="Card 1 Image" />
+                    </div>
+                    <div className="card-contentA">
+                        <h2>{userInfo.nombre} {userInfo.apellido}</h2>
+                        <div className="progressA">
+                            <div className="progress__fill"></div>
+                            <span className="progress__text">0%</span>
+                        </div>            
+                        <a>{userInfo.correo}</a><br />
+                        <a>{userInfo.direccion}</a><br />
+                        <a>{userInfo.redSocial}</a><br />
+                        <a>{userInfo.a}</a>
+                        {/* <button className="modificar-datosA">Modificar Datos</button> */}
+                    </div>
                 </div>
-                <div className="card-contentA">
-                    <h2>Nombre</h2>
-                    <p>RUTA QUE ESTA HACIENDO</p>
-                    <div className="progressA">
-                        <div className="progress__fill"></div>
-                        <span className="progress__text">0%</span>
-                    </div>            
-                    <a>CORREO ELECTRONICO</a><br />
-                    <a>DIRECCION</a><br />
-                    <a>RED SOCIAL</a><br />
-                    <a>A</a>
-                    <button className="modificar-datosA">Modificar Datos</button>
-                </div>
-            </div>
+            )}
             <div className="card2A card-with-image2A">
                 <div className="card-image-container2A">
                     <i className="fa-solid fa-book-bookmark" id="card-icon"></i>
