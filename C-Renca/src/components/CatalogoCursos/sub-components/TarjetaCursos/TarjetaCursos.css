@@ -1,9 +1,10 @@
-.row {
-  width: 40%;
-}
+
 .container-fluid {
 
   margin-bottom: 100px;
+}
+.main-4 {
+  height: auto;
 }
 .wrapper {
     width: 95%;
