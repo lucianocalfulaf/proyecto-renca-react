@@ -22,3 +22,17 @@
 .card a {
     box-shadow: none;
 }
+label {
+    display: block; /* Para que ocupen todo el ancho del contenedor */
+    border: 1px solid #ccc; /* Establece el borde con un color gris claro */
+    border-radius: 5px; /* Agrega bordes redondeados */
+    padding: 10px; /* Añade espacio interno para separar el texto del borde */
+    margin-bottom: 10px; /* Añade espacio entre cada label */
+    flex: 1; /* Hace que los label se expandan para ocupar todo el espacio disponible */
+    margin-right: 10px; /* Añade espacio entre cada label */
+  }
+  .cardsContainer {
+    display: flex; /* Utiliza Flexbox para alinear los elementos en fila */
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan a una nueva línea si no caben en una sola línea */
+  }
+  

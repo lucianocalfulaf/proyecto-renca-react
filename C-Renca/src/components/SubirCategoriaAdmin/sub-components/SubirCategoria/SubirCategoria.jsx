@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './SubirCategoria.css';
 function SubirCategoria() {
   const [nombreRuta, setNombreRuta] = useState('');
   const [descripcion, setDescripcion] = useState('');
@@ -39,29 +40,17 @@ function SubirCategoria() {
         <div className='descripcionFormulario'>
           <div className='textoFormulario'>
             <div className='cursosDisponibles'>
-
-              <div className="cardsContainer">
-                <div className="buttonContainer">
-                  <div>
-                    <label>
-                      Nombre de la Ruta:
-                      <input type="text" value={nombreRuta} onChange={(e) => setNombreRuta(e.target.value)} />
-                    </label>
-                  </div>
-                  <div>
-                    <label>
-                      Descripción:
-                      <input type="text" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
-                    </label>
-                  </div>
-                  <div>
-                    <label>
-                      Certificado:
-                      <input type="file" onChange={(e) => setCertificado(e.target.files[0])} />
-                    </label>
-                  </div>
-                </div>
-              </div>
+             <div className="cardsContainer">
+               <label>
+               Nombre de la Ruta:<input type="text" value={nombreRuta} onChange={(e) => setNombreRuta(e.target.value)} />
+               </label>
+               <label>
+               Descripción:<input type="text" value={descripcion} onChange={(e) => setDescripcion(e.target.value)} />
+               </label>
+               <label>
+               Certificado:<input type="file" className="custom-file-input" onChange={(e) => setCertificado(e.target.files[0])} />
+               </label>
+             </div>
             </div>
           </div>
         </div>
