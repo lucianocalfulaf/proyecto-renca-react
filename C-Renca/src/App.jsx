@@ -24,6 +24,8 @@ import SubirCurso from './components/SubirCurso/SubirCurso';
 import VerCategoriaAdmin from './components/VerCategoriaAdmin/VerCategoriaAdmin';
 import SubirCategoriaAdmin from './components/SubirCategoriaAdmin/SubirCategoriaAdmin';
 import ModificarCursoAdmin from './components/ModificarCursoAdmin/ModificarCursoAdmin';
+import CatalogoCursosUsuarios from './components/CatalogoCursosUsuarios/CatalogoCursosUsuarios';
+
 
 
 // Rutas (Agrega, remueve o modifica la ruta que deseas)
@@ -83,6 +85,10 @@ const router = createBrowserRouter([
   {
     path: "/catalogo-cursos",
     element: <CatalogoCursos />,
+  },
+  {
+    path: "/catalogo-cursos-usuarios",
+    element: <CatalogoCursosUsuarios />,
   },
   {
     path: "/crear-categoria-admin",
