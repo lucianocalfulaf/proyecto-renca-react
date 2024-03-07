@@ -71,7 +71,7 @@ html, body {
 
 /* App.css */
 .password-strength {
-  padding: 5px;
+  padding: 2px;
   color: white;
   text-align: center;
   border-radius: 5px;
@@ -93,4 +93,7 @@ html, body {
   margin-bottom: 10px;
   margin-top: 20px;
   
+}
+.contraseña {
+  padding-top: 5%;
 }
