@@ -1,32 +1,55 @@
-/* Estilos formulario */
-
-/* Contenedor Principal */
+/*Contenedor general*/
 .mc-container {
     display: grid;
     justify-content: center;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 200vh;
 }
 
-/* Titulo N° 1 */
+/* Titulo Modificar Ruta */
 .tituloFormularioSubida {
     color: hsl(172, 41%, 56%);
     font-family: poppins;
     text-align: left;
-    margin-top: 3%;
-    margin-left: 2%;
+    margin-top: 30px;
+    margin-left: 0%;
+    margin-bottom: 20px;
 }
 
 /* Contenedor Formulario */
 .contenedorFormulario {
-    margin-top: -100px;
-    margin-bottom: 50px;
-    width: 90vw;
+    margin-top: -140px; /* Ajusta el margen superior */
+    padding: 20px; /* Agrega relleno al contenedor */
+    position: relative;
+    z-index: 1; /* Asegura que el contenedorFormulario esté por debajo del h2 */
     background-color: rgb(222, 219, 219);
     border-radius: 10px;
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    box-shadow: 0px 0px 31px 0px rgba(0,0,0,0.75);
+    width: 90%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+
+.contenedorFormulario * {
+    max-width: 100%; /* Ancho máximo del 100% */
+}
+
+/* Estilos para el título dentro de contenedorFormulario */
+.contenedorFormulario .tituloFormularioSubida {
+    color: hsl(172, 41%, 56%);
+    font-family: poppins;
+    text-align: left;
+    margin-top: 3%;
+    margin-left: 0%;
+    margin-bottom: 0%;
+}
+
+.contenedorFormulario .descripcionFormulario,
+.contenedorFormulario .seleccionaRuta,
+.contenedorFormulario .buttonForm {
+    margin-top: 20px; /* Espacio entre los elementos */
+    color: white;
 }
 
 /* Descripción */
@@ -34,9 +57,22 @@
     flex: 1.5;
     display: flex;
     flex-direction: column;
-    margin-top: 10%;
+    margin: 10px 10px 10px 10px;
+    background-color: rgb(222, 219, 219);
 
-    margin-left: 5%;
+}
+
+/*Boton selecciona una ruta*/
+.seleccionaRuta {
+    background-color: hsl(172, 41%, 56%);
+    width: 280px;
+    text-align: left;
+    color: #ffff;
+    font-family: poppins;
+    border-radius: 10px;
+    margin: 30px 100px 100px 50px;
+    padding: 15px;
+    
 }
 
 .textoFormulario {
@@ -44,32 +80,33 @@
     font-family: poppins;
 } 
 
+.descripcionFormulario h2{
+    margin-bottom: 25px;
+}
+
 .tablaFormulario {
     margin-right: 200px;
     margin-top: -100px;
 }
 
-.buttonFormulario {
-    background-color: hsl(172, 41%, 56%);
+/*Boton seleccionar archivo*/
+.buttonForm {
+    background-color: #61bdb1;
     width: 280px;
     text-align: left;
     color: #ffff;
     font-family: poppins;
     border-radius: 10px;
     margin-right: 50px;
+ 
 }
 
-.buttonFormulario p {
-    color: #ffff;
-    font-family: poppins;
-}
-
-.buttonFormulario:hover {
-    background-color: #F59F30;
+.buttonForm:hover {
+    background-color: #ff6200;
 }
 
 .selectButtonFormulario {
-    background-color: hsl(172, 41%, 56%);
+    background-color: #61bdb1;
     width: 280px;
     height: 40px;
     text-align: left;
@@ -81,7 +118,7 @@
 }
 
 .selectButtonFormulario:hover {
-    background-color: #F59F30;
+    background-color: #ff6200;
 }
 
 .labelFormulario {
@@ -94,13 +131,6 @@
     border-radius: 10px;
 }
 
-.input {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-family: poppins;
-}
 
 /* Contenedor Modificar Cambios */
 .PrevisualizacionFormulario { 
@@ -110,6 +140,8 @@
     align-items: center;
     margin-top: 10%;
 }
+
+/*Botones*/
 
 .buttonSubir,
 .buttonEliminar {
@@ -125,23 +157,20 @@
     transition: 150ms ease-out;
 }
 
-.buttonSubir:hover,
-.buttonEliminar:hover {
-    transition: 150ms ease-in;
-}
-
+/*Botón Guardar cambios*/
 .buttonSubir {
-    background-color: hsl(172, 41%, 56%);
+    background-color: #61bdb1;
     margin-top: 1%;
 }
 
 .buttonSubir:hover {
-    background-color: #C8D300;
+    background-color: #ff6200;
     transform: scale(1.1);
 }
 
+/*Boton eliminar*/
 .buttonEliminar {
-    background-color: rgb(255, 98, 0);
+    background-color: #ff6200;
     margin-top: 3%;
 }
 
@@ -149,6 +178,17 @@
     background-color: #af0e02;
     transform: scale(1.1);
 }
+
+.buttonSubir:hover,
+.buttonEliminar:hover {
+    transition: 150ms ease-in;
+}
+
+/*Boton volver*/
+.btn {
+    margin-bottom: 25px;
+}
+
 
 /* CSS para Miniatura */
 .contenedorImagen {
@@ -158,6 +198,7 @@
     border: 3px solid #60BDB1;
     background-color: rgb(232, 230, 230);
 }  
+
 
 /* Estilos para Cursos Disponibles */
 .cursosDisponibles {
@@ -181,3 +222,57 @@
     text-overflow: ellipsis; /* Mostrar puntos suspensivos cuando el texto se trunque */
 }
 
+.input {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-family: poppins;
+    margin-bottom: 20px; /* Agregar margen inferior */
+}
+
+/*Resposividad*/
+/* Ajustes generales para hacer el contenido más responsive */
+@media screen and (max-width: 768px) {
+    .mc-container {
+        grid-template-columns: 1fr; /* Cambiar a una sola columna en pantallas más pequeñas */
+        justify-content: center; /* Centrar los elementos */
+        padding: 20px; /* Agregar relleno */
+    }
+
+    .contenedorFormulario {
+        width: 100%; /* Ajustar al ancho completo */
+        max-width: none; /* No establecer un ancho máximo */
+        margin-top: 20px; /* Ajustar el margen superior */
+    }
+
+    .tituloFormularioSubida {
+        margin-left: 0; /* Centrar el título */
+        text-align: center; /* Centrar el texto */
+        margin-bottom: 20px; /* Añadir espacio inferior */
+    }
+
+    .seleccionaRuta {
+        width: 100%; /* Ajustar al ancho completo */
+        margin: 20px 0; /* Ajustar los márgenes */
+    }
+
+    .buttonForm,
+    .selectButtonFormulario {
+        width: 100%; /* Ajustar al ancho completo */
+        margin: 20px 0; /* Ajustar los márgenes */
+    }
+
+    .descripcionFormulario {
+        margin: 10px 0; /* Ajustar los márgenes */
+    }
+
+    .PrevisualizacionFormulario {
+        margin-top: 40px; /* Ajustar el margen superior */
+    }
+
+    .btn {
+        margin-bottom: 20px; /* Ajustar el margen inferior */
+    }
+
+}

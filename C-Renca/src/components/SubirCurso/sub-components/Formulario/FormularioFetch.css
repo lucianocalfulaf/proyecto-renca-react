@@ -58,3 +58,8 @@ container-fluid
     transform: scale(1.03);
     transition: 150ms ease-in;
 }
+
+.aviso {
+    margin-left: 780px;
+    color: #769E33;
+}

@@ -12,6 +12,7 @@ function Formulario() {
   const [requisitos, setRequisitos] = useState('');
   const [contenidos, setContenidos] = useState('');
   const [imagen, setImagen] = useState(null); // Estado para almacenar la imagen seleccionada
+  const [enviadoExitosamente, setEnviadoExitosamente] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -53,6 +54,7 @@ function Formulario() {
       setRequisitos('');
       setContenidos('');
       setImagen(null); // Reinicia el estado de la imagen
+      setEnviadoExitosamente(true);
     } catch (error) {
       console.error('Hubo un problema al enviar el curso:', error);
     }
@@ -129,6 +131,7 @@ function Formulario() {
           />
         </div>
         <button type="submit" id="botonForm">Enviar</button>
+        {enviadoExitosamente && <p className="aviso">¡Curso creado con éxito!</p>}
       </form>
     </div>
   );

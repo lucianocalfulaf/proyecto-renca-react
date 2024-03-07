@@ -93,19 +93,20 @@ const eliminarCursoDeRuta = (cursoId) => {
 
   return (
     <div className="mc-container">
-      <h2 className='tituloFormularioSubida'>Modificar Categoría</h2>
+      <h2 className='tituloFormularioSubida'>Modificar Ruta de Aprendizaje</h2>
       <form className='contenedorFormulario' onSubmit={handleSubmit}>
+      
         <div className='descripcionFormulario'>
           <div className='textoFormulario'>
           <div >
-              <select onChange={(e) => handleSeleccionarRuta(e.target.value)}>
-                <option value="">Selecciona una ruta</option>
+              <select className="seleccionaRuta" onChange={(e) => handleSeleccionarRuta(e.target.value)}>
+                <option  value="">Selecciona una ruta</option>
                 {rutas.map(ruta => (
                   <option key={ruta._id} value={ruta._id}>{ruta.nombreRuta}</option>
                 ))}
               </select>
             </div>
-            <h2>Modificar Ruta: {rutaSeleccionada ? rutaSeleccionada.nombreRuta : ''}</h2>
+            <h2 style={{ color: '#009A88' }}>Modificar Ruta: {rutaSeleccionada ? rutaSeleccionada.nombreRuta : ''}</h2>
             <input
               placeholder='Nombre Ruta'
               type="text"
@@ -122,7 +123,7 @@ const eliminarCursoDeRuta = (cursoId) => {
             />
 
             <div className='cursosDisponibles'>
-              <h2>Cursos Disponibles</h2>
+              <h2 style={{ color: '#009A88' }}>Cursos Disponibles</h2>
               <div className="cardsContainer">
                 {cursos.map(curso => (
                   <div key={curso._id} className="card">
@@ -169,7 +170,7 @@ const eliminarCursoDeRuta = (cursoId) => {
         </div>
         <div className='PrevisualizacionFormulario'>
           <h3>{rutaSeleccionada ? rutaSeleccionada.nombreRuta : ''}</h3>
-          <button type="submit" className='buttonSubir' onClick={handleGuardarCambios}><span>Guardar Cambios</span></button>
+          <button type="submit" className='buttonSubir' onClick={handleGuardarCambios} ><span style={{ color: 'white' }}>Guardar Cambios</span></button>
           <button className='buttonEliminar'>Eliminar Ruta</button>
         </div>
       </form>
