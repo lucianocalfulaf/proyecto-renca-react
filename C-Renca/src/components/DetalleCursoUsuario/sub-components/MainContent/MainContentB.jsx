@@ -15,7 +15,7 @@ const MainContentB = () => {
             <h2 className="section-title"><i className="fa-solid fa-chalkboard-user"></i>Mis Cursos</h2>
             <div className="top-row-3">
                 <InfoGeneral />
-                <BotonContinuar/>
+                <BotonContinuar />
             </div>
             <div className="bottom-row-3">
                 <h3 className="section-subtitle">Contenidos del curso:</h3>

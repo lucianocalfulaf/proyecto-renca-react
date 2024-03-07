@@ -34,7 +34,7 @@ const Card = () => {
                     <i className="fa-solid fa-user-tie"></i>
                     <h2>John Doe</h2>
                     <p>Jefe de Procesos</p>      
-                    <a>admin@gmail.com </a><br />
+                    <p>admin@gmail.com </p><br />
                     <button className="modificar-datosHA" style={{ display: 'none' }}>Modificar Datos</button>
                 </div>
             </div>

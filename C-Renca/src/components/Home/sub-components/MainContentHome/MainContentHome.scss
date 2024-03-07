@@ -9,13 +9,34 @@
     grid-row-end: 3;
     background-color: $seventh-color;
     width: 100vw;
-    height: 100vh;
+    height: 120vh;
     display: grid;
     grid-template-rows: 1fr .4fr;
     background-image: url("/Logo C-Renca.png"); // Cambiar Logo
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 30%;
-    margin-top: -3%;
 }
 
+Footer {
+    margin-bottom: 0;
+}
+
+
+@media screen and (min-width: 1454px) {
+    .main-home {
+        margin-top: -1.2%;
+    }
+}
+
+@media screen and (max-width: 1455px) {
+    .main-home {
+        margin-top: -1.2%;
+    }
+}
+
+@media screen and (min-width: 1456px) {
+    .main-home {
+        margin-top: -1.2%;
+    }
+}

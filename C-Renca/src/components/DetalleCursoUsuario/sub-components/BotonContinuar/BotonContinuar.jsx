@@ -1,5 +1,5 @@
 import './BotonContinuar.css';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function BotonContinuar({ updateCounter }) {
   const [counter, setCounter] = useState(0);

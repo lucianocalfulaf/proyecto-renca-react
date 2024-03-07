@@ -1,37 +1,41 @@
 @import '../../../../resets/resets';
 @import '../../../../resets/variables';
 
-.search-container {
-    text-align: center;
-    font-family: $font-family;
-    width: 100%;
-    margin-top: 12%;
+@media screen and (min-width: 768px) {
+  
+    .search-container {
+        text-align: center;
+        font-family: $font-family;
+        width: 100%;
+        margin-top: 12%;
 
-    h1 {
-        color: $quinary-color;
+        h1 {
+            color: $quinary-color;
+        }
     }
-}
 
-.table {
-    width: 50vw;
-}
+    .table {
+        width: 50vw;
+    }
 
-.form-control {
-    margin-top: 12%;
-    width: 95%;
-}
+    .form-control {
+        margin-top: 12%;
+        width: 95%;
+    }
 
-.bg-curso th {
-    background-color: $quaternary-color;
-    font-family: $font-family;
-    color: #fff;
-}
+    .bg-curso th {
+        background-color: $quaternary-color;
+        font-family: $font-family;
+        color: #fff;
+    }
 
-tbody td {
-    cursor: pointer;
-}
+    tbody td {
+        cursor: pointer;
+    }
 
-.link-alumno {
-    text-decoration: none;
-    color: rgb(32, 22, 22);
+    .link-alumno {
+        text-decoration: none;
+        color: rgb(32, 22, 22);
+    }
+
 }

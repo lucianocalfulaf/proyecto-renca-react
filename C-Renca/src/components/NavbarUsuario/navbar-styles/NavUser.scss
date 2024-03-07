@@ -8,7 +8,7 @@
     justify-content: space-around;
     background-color: $secondary-color;
     width: 100vw;
-    height: 50%;
+    height: 30%;
 
     // Estilo general de lista
     &__list {
@@ -168,3 +168,9 @@
 
 }
 
+
+@media screen and (max-width: 1275px) {
+    .navbarUser {
+        margin-bottom: -1%;
+    }
+}

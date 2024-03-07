@@ -17,7 +17,7 @@ const Nav = ({ displayOne }) => {
                 <ul className="navbarUser__list">
 
                     {/* Explorar Cursos */}
-                    <li className="navbarUser__item--explorar" ><a href="/catalogo-cursos-usuarios">Explorar Cursos</a></li>
+                    <li className="navbarUser__item--explorar" ><a href="#">Explorar Cursos</a></li>
                     
                     {/* Buscar */}
                     <li className="navbarUser__search">

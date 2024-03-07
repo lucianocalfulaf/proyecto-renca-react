@@ -1,34 +1,72 @@
 @import '../../../resets/resets';
 @import '../../../resets/variables';
 
-.input-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
-    height: 50%;
-    margin-bottom: 4.7%;
-}
+@media screen and (min-width: 1025px) {
+    /* Estilos para pantallas con ancho mínimo de 1025px */
+    .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 70%;
+        height: 50%;
+        margin-top: 5%;
+        margin-bottom: 10%;
+    }
+    
+    #inputUser {
+        width: 90%;
+        height: 100%;
+    }
+    
+    Button i {
+        color: #fff;
+    }
+    
+    #button-addon23 i:hover {
+        color: #fff;
+    }
+    
+    #button-addon23 {
+        height: 5%;
+        margin-top: 11.9%;
+    }
+    
+    #button-addon23:hover {
+        background-color: $primary-color;
+    }
+  }
 
-#inputUser {
-    width: 90%;
-    height: 100%;
-}
-
-Button i {
-    color: #fff;
-}
-
-#button-addon23 i:hover {
-    color: #fff;
-}
-
-#button-addon23 {
-    height: 5%;
-    margin-top: 11.9%;
-}
-
-#button-addon23:hover {
-    background-color: $primary-color;
-}
-
+  @media screen and (max-width: 1024px) {
+    /* Estilos para pantallas con ancho máximo de 1024px */
+    .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+        height: 40%;
+        margin-top: 7%;
+        margin-bottom: 7%;
+    }
+    
+    #inputUser {
+        width: 90%;
+        height: 100%;
+    }
+    
+    Button i {
+        color: #fff;
+    }
+    
+    #button-addon23 i:hover {
+        color: #fff;
+    }
+    
+    #button-addon23 {
+        height: 5%;
+        margin-top: 11.9%;
+    }
+    
+    #button-addon23:hover {
+        background-color: $primary-color;
+    }
+  }
