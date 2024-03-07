@@ -39,8 +39,11 @@ const Nav = ({ displayOne }) => {
                     </li>
 
                     <li className="navbarUser__item--logged" style={{ display: displayOne ? 'flex' : 'none'}}>
-                        <Link to="/perfil-usuario"><a href="#"><img src="/testUser.png" alt="Foto Usuario" title="Perfil Usuario"/></a></Link>
+                        <Link to="/perfil-usuario" className='userImage'><img src="/testUser.png" alt="Foto Usuario" title="Perfil Usuario"/></Link>
+                        <br />
+                        <Link to="/login" className='iconImage'><i className='fa-solid fa-right-from-bracket' title="Logout"></i></Link>
                     </li>
+
 
                 </ul>
 

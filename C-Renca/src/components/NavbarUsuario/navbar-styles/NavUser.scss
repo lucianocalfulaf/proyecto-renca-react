@@ -136,7 +136,7 @@
 
     // Logged
     &__item--logged {
-        width: 5%;
+        width: 10%;
         // display: flex;
         justify-content: space-around;
         align-content: center;
@@ -144,16 +144,27 @@
         grid-column-end: 7;
         transition: 150ms ease-out;
 
-        img {
+        .userImage img {
+            width: 80%;
+            margin-right: 10px;
+        }
+
+        .userImage img:hover {
+            transform: scale(1.1);
+            transition: 150ms ease-in;
+        }
+
+        .iconImage {
             width: 100%;
+            margin-left: 10px;
+            margin-top: 2px;
+        }
+
+        .iconImage:hover {
+            transform: scale(1.1);
         }
     }
 
-    &__item--logged:hover {
-        transform: scale(1.1);
-        transition: 150ms ease-in;
-        color: $primary-color;
-    }
 
 }
 

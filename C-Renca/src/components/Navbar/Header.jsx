@@ -27,11 +27,11 @@ const Header = () => {
 
                 <div className="header__container" style={{backgroundColor: isDark ? adminTheme.backgroundColor : adminTheme.backgroundColor}}>
                     <Link to="/home-admin"><img className="header__logo" src="/logo-renca.png" alt="Logo de Renca" title="Home"/></Link>                
-                    <i 
+                    <Link to="/login-admin" className="header__logout"><i 
                         className='fa-solid fa-right-from-bracket header__logout'
                         id={isDark ? 'i-dark' : 'i-light'}
                         title="Logout"
-                    ></i>
+                    ></i></Link>
                 </div>
 
                 <Nav toggleBuscador={toggleBuscador}/>

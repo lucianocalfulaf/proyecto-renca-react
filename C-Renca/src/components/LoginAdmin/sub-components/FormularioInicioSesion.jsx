@@ -1,27 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
+import { Navigate } from 'react-router-dom';
+import axios from 'axios';
 
 function FormularioInicioSesion() {
-    
-  //Local Storage para el Admin    
-    const adminLogin = (email, contraseña) => {
-      // Aquí deberías verificar las credenciales de administrador en el servidor
-      if (email === 'admin' && contraseña === 'admincontraseña') {
-        // Iniciar sesión de administrador 
-        localStorage.setItem('adminID', email); // Almacena el email de administrador como ID de administrador
-        alert('Inicio de sesión de administrador exitoso');
-  
-        // Hay que definir cuál será la página principal del Admin
-        window.location.href = '/';
-      } else {
-        alert('Credenciales de administrador incorrectas');
-      }
-    }; 
-
-    const loginAdmin = () => {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      adminLogin(email, password);
-  };
 
   const forgotPassword = () => {
       // Aquí debes implementar la lógica para manejar el caso de olvido de contraseña
@@ -29,6 +10,33 @@ function FormularioInicioSesion() {
   };
 
     
+    const [correo, setCorreo] = useState('');
+    const [contrasena, setContrasena] = useState('');
+    const [redirect, setRedirect] = useState(false);
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+            const response = await axios.post("http://localhost:4000/login-admin", { correo, contrasena });
+            // Guardar el token de sesión en localStorage si el inicio de sesión es exitoso
+            localStorage.setItem('token', response.data.token);
+            localStorage.setItem('usuario', JSON.stringify(response.data.data));
+            console.log("token: ",response.data.token);
+            console.log("Sesión iniciada: ", response.data);
+            console.log("datos usuario: ",response.data.data);
+            console.log("id usuario: ",response.data.data.id);
+            alert('Inicio de Sesión exitoso!');
+            // Establecer la variable de estado redirect en true para activar la redirección
+            setRedirect(true);
+        } catch (error) {
+          alert('Inicio de sesión incorrecto \nRevisa si ingresaste bien los datos!');
+            console.error("Error al iniciar sesión: ", error);
+            // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario
+        }
+    }
+    // Redirige al usuario a la página de perfil después de iniciar sesión correctamente
+    if (redirect) {
+        return <Navigate to="/home-admin" />;
+    }
     
     return (
       <div className="formulario-is">
@@ -43,6 +51,8 @@ function FormularioInicioSesion() {
             type="email"
             id="email"
             name="email"
+            value={correo} 
+            onChange={(e) => setCorreo(e.target.value)}
             required
           />
           <br />
@@ -52,10 +62,12 @@ function FormularioInicioSesion() {
             type="password"
             id="password"
             name="password"
+            value={contrasena} 
+            onChange={(e) => setContrasena(e.target.value)} 
             required
           />
           <br />
-          <button type="btn" className="botonRegister-is" onClick={() => loginAdmin()}>
+          <button type="btn" className="botonRegister-is" onClick={handleSubmit}>
             Iniciar Sesión
           </button>
           <br />

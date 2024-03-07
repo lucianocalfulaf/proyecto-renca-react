@@ -23,22 +23,6 @@ function LoginForm() {
     alert('Redirigiendo a la página de registro');
   };
   
-
-  //Local Storage para el Admin    
-  const adminLogin = (email, contraseña) => {
-    // Aquí deberías verificar las credenciales de administrador en el servidor
-    if (email === 'admin' && contraseña === 'admincontraseña') {
-      // Iniciar sesión de administrador 
-      localStorage.setItem('adminID', email); // Almacena el email de administrador como ID de administrador
-      alert('Inicio de sesión de administrador exitoso');
-
-      // Hay que definir cuál será la página principal del Admin
-      window.location.href = '/';
-    } else {
-      alert('Credenciales de administrador incorrectas');
-    }
-  }; 
-  
     const [correo, setCorreo] = useState('');
     const [contrasena, setContrasena] = useState('');
     const [redirect, setRedirect] = useState(false);
@@ -53,9 +37,11 @@ function LoginForm() {
             console.log("Sesión iniciada: ", response.data);
             console.log("datos usuario: ",response.data.data);
             console.log("id usuario: ",response.data.data.id);
+            alert('Inicio de Sesión exitoso!');
             // Establecer la variable de estado redirect en true para activar la redirección
             setRedirect(true);
         } catch (error) {
+          alert('Inicio de sesión incorrecto \nRevisa si ingresaste bien los datos!');
             console.error("Error al iniciar sesión: ", error);
             // Aquí puedes manejar el error, como mostrar un mensaje de error al usuario
         }

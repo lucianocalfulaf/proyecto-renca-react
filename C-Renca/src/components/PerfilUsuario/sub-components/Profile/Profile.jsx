@@ -1,8 +1,29 @@
 import './Profile.scss';
 import React from 'react'; // Import React for state management
+import { useEffect, useState  } from 'react';
 
 const Profile = () => {
   const [isEditing, setIsEditing] = React.useState(false); // State to track edit mode
+  const [loggedUser, setLoggedUser] = useState(null);
+
+    useEffect(() => {
+        // Obtener el ID del usuario almacenado en el localStorage
+        const storedUserID = localStorage.getItem('userID');
+
+        // Si hay un ID de usuario almacenado, busca el usuario correspondiente
+        if (storedUserID) {
+            const getUser = async () => {
+                const res = await fetch('http://localhost:4000/usuarios');
+                const data = await res.json();
+                const foundUser = data.find(user => user.correo === storedUserID);
+                if (foundUser) {
+                    setLoggedUser(foundUser);
+                }
+            };
+
+            getUser();
+        }
+    }, []);
 
   const handleEditClick = () => {
     setIsEditing(true); // Open lightbox on click
@@ -34,26 +55,23 @@ const Profile = () => {
   return (
     <div className="card-container">
       {isEditing && lightboxContent} {/* Render lightbox conditionally */}
-      <div className="card card-with-image">
-        <div className="card-image-container">
-          <img src="/testUser2.png" alt="Card 1 Image" />
-        </div>
-        <div className="card-content">
-          <h2>Nombre</h2>
-          <p>RUTA QUE ESTA HACIENDO</p>
-          <div className="progress">
-            <div className="progress__fill"></div>
-            <span className="progress__text">0%</span>
-          </div>
-          <a>CORREO ELECTRONICO</a><br />
-          <a>DIRECCION</a><br />
-          <a>RED SOCIAL</a><br />
-          <a>A</a>
-          <button className="modificar-datos" onClick={handleEditClick}>
-            Modificar Datos
-          </button>
-        </div>
-      </div>
+      {loggedUser && (
+                <div key={loggedUser.email} className="card card-with-image">
+                    <div className="card-image-container">
+                        <img src="/testUser2.png" alt="Card 1 Image" />
+                    </div>
+                    <div className="card-content">
+                        <h2>{loggedUser.nombre} {loggedUser.apellido}</h2>
+                        <div className="progress">
+                            <div className="progress__fill"></div>
+                            <span className="progress__text">0%</span>
+                        </div>
+                        <a>{loggedUser.correo}</a><br />
+                        <a>{loggedUser.direccion}</a><br />
+                        <button className="modificar-datos" onClick={handleEditClick}>Modificar Datos</button>
+                    </div>
+                </div>
+            )}
       <div className="card2 card-with-image2">
         <div className="card-image-container2">
           <i className="fa-solid fa-book-bookmark" id="card-icon"></i>

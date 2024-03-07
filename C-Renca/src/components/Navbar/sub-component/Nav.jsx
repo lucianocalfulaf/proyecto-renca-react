@@ -39,7 +39,7 @@ const Nav = ({ toggleBuscador }) => {
                             <Link to="/ver-categoria-admin"
                                 className={isDark ? 'navbar__link--dark' : 'navbar__link--light'}
                             >
-                                <span>Categorías</span>
+                                <span>Rutas de Aprendizaje</span>
                             </Link>
                         </a>
                     </li>
