@@ -45,8 +45,17 @@ function TarjetaCursos() {
 
   return (
     <div className="container-fluid">
+      <div className="row mb-12" style={{marginTop: '1em'}}>
+        <div className='col-6'>
+          <Link to='/subir-curso'><button className="btn btn-primary">Subir Nuevo Curso</button></Link>
+        </div>
+        <div className='col-6'>
+          <Link to='/modificar-curso'><button className="btn btn-primary">Modificar Cursos</button></Link>
+          </div>
+
+      </div>
       <div className="row mb-12">
-        <div className="col-4-md-6">
+        <div className="col-3">
           <input
             type="text"
             className="form-control"

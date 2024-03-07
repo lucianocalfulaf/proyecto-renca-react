@@ -13,16 +13,15 @@ import axios from 'axios';
 //No debería afectar al JWT 
 function LoginForm() {
   const [{loginTheme, isDark}, toggleTheme] = useContext(ThemeContextUser); // Dark Mode
- 
-    const forgotPassword = () => {
-      // Simulación de restablecimiento de contraseña
-      alert('Se ha enviado un correo electrónico para restablecer su contraseña');
-    };
+  const forgotPassword = () => {
+    // Simulación de restablecimiento de contraseña
+    alert('Se ha enviado un correo electrónico para restablecer su contraseña');
+  };
 
-    const register = () => {
-      // Simulación de redirección a la página de registro
-      alert('Redirigiendo a la página de registro');
-    };
+  const register = () => {
+    // Simulación de redirección a la página de registro
+    alert('Redirigiendo a la página de registro');
+  };
   
 
   //Local Storage para el Admin    

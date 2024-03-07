@@ -5,7 +5,7 @@ import { ThemeContextUser } from '../../context/ThemeContextUser';
 import './Registro.css';
 import logo from '/favicon.png';
 import axios from 'axios';
-
+import { Navigate } from 'react-router-dom';
 function Registro() {
   const [{loginTheme, isDark}, toggleTheme] = useContext(ThemeContextUser); // Dark Mode
 
@@ -16,6 +16,7 @@ function Registro() {
   const [direccion, setDireccion] = useState('');
   const [fechaNacimiento, setFechaNacimiento] = useState('');
   const [imagen, setImagen] = useState(null);
+  const [redirect, setRedirect] = useState(false);
 
   const handleSubmit = (event) => {
       event.preventDefault();
@@ -44,14 +45,16 @@ function Registro() {
           setDireccion('');
           setFechaNacimiento('');
           setImagen(null);
+          // setRedirect(true);
 
-          // Redirigir al perfil del usuario
-          //history.push('/perfil');
-          // window.location.href = '/login';
       })
       .catch(error => {
           console.error("Error al registrar usuario: ",error);
       })
+  }
+
+  if(redirect) {
+    return <Navigate to="/login" />
   }
 
 
@@ -105,7 +108,9 @@ return (
                   required
                 />
               </td>
-              <td>
+            </tr>
+            <tr>
+            <td>
                 <input
                   className="form"
                   placeholder="Correo Electrónico:"
@@ -114,20 +119,6 @@ return (
                   name="correo"
                   value={correo}
                   onChange={(e) => setCorreo(e.target.value)}
-                  required
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <input
-                  className="form"
-                  placeholder="Fecha de Nacimiento:"
-                  type="date"
-                  id="fechaNacimiento"
-                  name="fechaNacimiento"
-                  value={fechaNacimiento}
-                  onChange={(e) => setFechaNacimiento(e.target.value)}
                   required
                 />
               </td>
@@ -145,11 +136,11 @@ return (
               </td>
             </tr>
             <tr>
-              <td>
+            <td>
                 <input
                   className="form"
                   placeholder="Contraseña:"
-                  type="contrasena"
+                  type="password"
                   id="contrasena"
                   name="contrasena"
                   value={contrasena}
@@ -165,6 +156,24 @@ return (
               </td>
             </tr>
             <tr>
+
+            </tr>
+            <tr>
+            <td>
+                <input
+                  className="form"
+                  placeholder="Fecha de Nacimiento:"
+                  type="date"
+                  id="fechaNacimiento"
+                  name="fechaNacimiento"
+                  value={fechaNacimiento}
+                  onChange={(e) => setFechaNacimiento(e.target.value)}
+                  required
+                />
+              </td>
+
+            </tr>
+            <tr>
               <td colSpan="2">
                 <label htmlFor="fileInput">Subir RSH y Certificado de Estudios:</label>
                 <input
@@ -178,7 +187,7 @@ return (
           </tbody>
         </table>
         <br />
-        <button type="submit" className="botonRegister" onClick={Registro}>
+        <button type="submit" className="botonRegister">
           Registrarse
         </button>
         <br />
