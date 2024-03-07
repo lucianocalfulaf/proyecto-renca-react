@@ -39,6 +39,12 @@ function TarjetaCursosUsuarios() {
     );
   });
 
+  //localstorage
+  const guardarCursoLocalStorage = (curso) => {
+    localStorage.setItem('cursoSeleccionado', JSON.stringify(curso));
+    console.log('Curso guardado en localStorage:', curso);
+  }
+
   return (
     <div className="container-fluid">
       <div className="row mb-12">
@@ -66,11 +72,11 @@ function TarjetaCursosUsuarios() {
       </div>
       <div className="row">
         {filteredCursos.map((curso, index) => (
-          <div key={curso._id} className='col-4 col-md-6 col-sm-12 col-lg-5'>
+          <div key={curso._id} onClick={() => guardarCursoLocalStorage(curso)} className='col-4 col-md-6 col-sm-12 col-lg-5'>
             <div className='card' style={{ maxWidth: '18rem', maxHeight: '30rem'}}>
               <img src={curso.imagen?.url} alt={curso.nombreCurso} className='card-img-top' />
               <div className='card-body '>
-                <Link to={`/curso/${curso._id}`}>
+                <Link to={`/detalle-curso-usuario`}>
                   <h5 className='card-title '>{curso.nombreCurso}</h5>
                 </Link>
                 <p className='card-text'>Filtro: {curso.filtro}</p>
