@@ -7,10 +7,10 @@ import { Navigate } from 'react-router-dom';
 import axios from 'axios';
 
 
-//LocalStorage implementado, falta probar que funcione
+//LocalStorage implementado
 //Como está enrutado, debería guardarse el login para todas las páginas
 //Por seguridad del usuario, no se almacena la contraseña
-//No debería afectar al JWT 
+
 function LoginForm() {
   const [{loginTheme, isDark}, toggleTheme] = useContext(ThemeContextUser); // Dark Mode
   const forgotPassword = () => {
