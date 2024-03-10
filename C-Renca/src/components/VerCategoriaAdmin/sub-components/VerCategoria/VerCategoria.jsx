@@ -21,7 +21,7 @@ function VerCategoria() {
   return (
     <div>
       <h1>Rutas de Aprendizaje</h1>
-      <Link to="/subir-categoria-admin"><button className='btn btn-primary'>Crear Ruta Nueva</button> </Link>
+      <Link to="/crear-categoria-admin"><button className='btn btn-primary'>Crear Ruta Nueva</button> </Link>
 
       <div className='row'>
         {rutas.map((ruta) => (
